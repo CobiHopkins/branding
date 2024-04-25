@@ -1,9 +1,11 @@
 import React from 'react';
 
+import ProjectGrid from './projectgrid';
+
 function Projects(props) {
     return (
         <div className='site-layout'>
-            <h1>The Projects page</h1>
+            <ProjectGrid />
         </div>
     );
 }

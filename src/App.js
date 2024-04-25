@@ -16,7 +16,7 @@ const { Header, Content } = Layout;
 function App() {
   return (
     <Router>
-      <Header style={{ backgroundColor: '#2E4053'}}>
+      <Header style={{ backgroundColor: '#20242D'}}>
         <Nav />
       </Header>
 
