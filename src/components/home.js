@@ -19,9 +19,7 @@ function Home(props) {
                 <h1 style={{fontSize: 80}}>PROJECTS</h1>
             </Row>
             <Row type='flex' justify='center' style={{ backgroundColor: '#2E4053', padding: 20}}>
-                <Row type='flex'>
-                    <ProjectGrid />
-                </Row>
+                <ProjectGrid />
             </Row>
             {/* <Row type='flex' justify='center' style={{ backgroundColor: '#20242D', padding: 20}}>
                 <SkillsGrid />

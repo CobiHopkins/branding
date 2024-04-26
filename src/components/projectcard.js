@@ -10,7 +10,7 @@ class ProjectCard extends React.Component {
 
         return (
             <Card 
-                style={{width: 350}}
+                style={{maxWidth: 350}}
                 cover={<img alt={`Project ${projectID}`} src={this.props.url} to={`/project/${projectID}`} />}
                 hoverable={true}
                 >

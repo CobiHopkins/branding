@@ -29,7 +29,7 @@ class ProjectGrid extends React.Component {
         const projectList = this.state.projects.map(project => {
             return (
                 <div style={{padding: '10px'}} key={'project_' + project.id}>
-                    <Col span={8}>
+                    <Col>
                         <ProjectCard {...project} />
                     </Col>
                 </div>

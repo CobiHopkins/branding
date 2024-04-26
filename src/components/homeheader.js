@@ -5,7 +5,8 @@ import {
     GithubOutlined,
     XOutlined,
     DiscordOutlined,
-    DownloadOutlined
+    DownloadOutlined,
+    LinkedinOutlined
 } from '@ant-design/icons';
 
 function HomeHeader(props) {
@@ -39,10 +40,10 @@ function HomeHeader(props) {
                         </Col> */}
                         <Col justify='center' style={{ margin: '10px'}}>
                             <a href='https://github.com/CobiHopkins' target='_blank' style={{ fontSize: 40, color: '#fff'}}><GithubOutlined /></a>
-                            <Divider type="vertical" />
-                            <a href='' target='_blank' style={{ fontSize: 40, color: '#fff'}}><DiscordOutlined /></a>
-                            <Divider type="vertical" />
-                            <a href='' target='_blank' style={{ fontSize: 40, color: '#fff'}}><XOutlined /></a>
+                            <Divider type="vertical" style={{padding: 10}}/>
+                            <a href='https://www.linkedin.com/in/cobihopkins/' target='_blank' style={{ fontSize: 40, color: '#fff'}}><LinkedinOutlined /></a>
+                            <Divider type="vertical" style={{padding: 10}}z />
+                            <a href='https://twitter.com/CeeJaeRL' target='_blank' style={{ fontSize: 40, color: '#fff'}}><XOutlined /></a>
                         </Col>
                     </Row>
                 </Col>
