@@ -12,15 +12,20 @@ function Home(props) {
     return (
         <div className='site-layout'>
             <HomeHeader />
-            <Row type='flex' justify='center' style={{backgroundColor: '#2E4053'}}>
+            <Row type='flex' justify='center' style={{backgroundColor: '#FFFFFF'}}>
                 <HomeAbout />
             </Row>
-            <Row type='flex' justify='center' style={{ backgroundColor: '#E6E6E6', padding: 20}}>
-                <ProjectGrid />
+            <Row type='flex' justify='center' style={{ backgroundColor: '#2E4053', color: '#fff'}}>
+                <h1 style={{fontSize: 80}}>PROJECTS</h1>
             </Row>
-            <Row type='flex' justify='center' style={{ backgroundColor: '#20242D', padding: 20}}>
+            <Row type='flex' justify='center' style={{ backgroundColor: '#2E4053', padding: 20}}>
+                <Row type='flex'>
+                    <ProjectGrid />
+                </Row>
+            </Row>
+            {/* <Row type='flex' justify='center' style={{ backgroundColor: '#20242D', padding: 20}}>
                 <SkillsGrid />
-            </Row>
+            </Row> */}
         </div>
     );
 }

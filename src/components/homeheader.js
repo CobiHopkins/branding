@@ -1,10 +1,27 @@
 import React from 'react';
-import { Row, Col, Button } from 'antd';
+import { Row, Col, Button, Divider, Avatar } from 'antd';
+import logo from '../assets/me_plain_red_green.jpg';
+import {
+    GithubOutlined,
+    XOutlined,
+    DiscordOutlined,
+    DownloadOutlined
+} from '@ant-design/icons';
 
 function HomeHeader(props) {
     return (
-        <Row type='flex' justify='space-around' style={{height: 'calc(100vh - 64px)', backgroundColor: '#20242D', color: 'white'}}>
+        <Row type='flex' justify='space-around' style={{minHeight: 'calc(100vh - 64px)', backgroundColor: '#20242D', color: 'white'}}>
                 <Col style={{ alignSelf: 'center'}}>
+                    <Row type='flex' justify='center' style={{margin: '0px'}}>
+                        <Avatar size={{
+                            xs: 80,
+                            sm: 100,
+                            md: 120,
+                            lg: 240,
+                            xl: 360,
+                            xxl: 480
+                        }} src={logo}/>
+                    </Row>
                     <Row type='flex' justify='center' style={{margin: '0px'}}>
                         <h1 style={{fontSize: '60px', fontWeight: 800, margin: '0px'}}>Cobi Hopkins</h1>
                     </Row>
@@ -17,11 +34,15 @@ function HomeHeader(props) {
                         </p>
                     </Row>
                     <Row type='flex' justify='center' style={{margin: '0px'}}>
+                        {/* <Col justify='center' style={{ margin: '10px'}}>
+                            <Button type='primary' size='large' style={{ backgroundColor: '#2E4053'}}>Download CV<DownloadOutlined /></Button>
+                        </Col> */}
                         <Col justify='center' style={{ margin: '10px'}}>
-                            <Button type='primary' size='large' style={{ backgroundColor: '#2E4053'}}>Download CV</Button>
-                        </Col>
-                        <Col justify='center' style={{ margin: '10px'}}>
-                            <Button type='primary' size='large' style={{ backgroundColor: '#F33A6A'}}>GitHub</Button>
+                            <a href='https://github.com/CobiHopkins' target='_blank' style={{ fontSize: 40, color: '#fff'}}><GithubOutlined /></a>
+                            <Divider type="vertical" />
+                            <a href='' target='_blank' style={{ fontSize: 40, color: '#fff'}}><DiscordOutlined /></a>
+                            <Divider type="vertical" />
+                            <a href='' target='_blank' style={{ fontSize: 40, color: '#fff'}}><XOutlined /></a>
                         </Col>
                     </Row>
                 </Col>

@@ -40,7 +40,7 @@ class ProjectGrid extends React.Component {
             <Row type='flex' justify='center'>
                 {projectList}
             </Row>
-        );
+    );
     }
 }
 
