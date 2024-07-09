@@ -31,7 +31,7 @@ function HomeHeader(props) {
                     </Row>
                     <Row type='flex' justify='center' style={{margin: '0px'}}>
                         <p style={{ fontSize: '18px', fontWeight: 400, margin: 0, maxWidth: 800, color: '#7e7e7e', padding: 10 }}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a enim semper, efficitur dui nec, tempor lorem. Curabitur feugiat laoreet purus sit amet sagittis. Nunc semper tellus et tortor rhoncus, vel porttitor libero mattis. Quisque in imperdiet arcu, id consectetur libero. Aliquam commodo velit sed arcu feugiat commodo. Etiam dictum semper hendrerit.
+                        Hello! I'm a recent graduate from Coventry University, holding a First-class honours degree in Computer Science. With a specialization in Web Development, I am passionate about creating accessible and impactful web applications. Currently, I am actively seeking professional development opportunities where I can hone my skills and broaden my knowledge base. I have a particular interest in leveraging technology to assist individuals with disabilities, aiming to make the digital world more inclusive for everyone.
                         </p>
                     </Row>
                     <Row type='flex' justify='center' style={{margin: '0px'}}>

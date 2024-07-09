@@ -10,11 +10,11 @@ class ProjectCard extends React.Component {
 
         return (
             <Card 
-                style={{maxWidth: 350}}
-                cover={<img alt={`Project ${projectID}`} src={this.props.url} to={`/project/${projectID}`} />}
+                style={{maxWidth: 350, borderRadius: 0}}
+                cover={<img style={{borderRadius: 0, maxHeight: 350, objectFit: "cover"}} alt={`Project ${projectID}`} src={this.props.url} to={`/project/${projectID}`} />}
                 hoverable={true}
                 >
-                    <Meta title={this.props.title} description={this.props.desc} />
+                    <Meta style={{paddingTop: 10, paddingBottom: 10}} title={this.props.title} description={this.props.desc} />
                 </Card>
         )
     }
