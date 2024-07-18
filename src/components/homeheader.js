@@ -30,11 +30,6 @@ function HomeHeader(props) {
                         <h3 style={{ fontSize: '20px', fontWeight: 400, textTransform: 'uppercase', color: '#F33A6A'}}>Aspiring Full-Stack Web Developer</h3>
                     </Row>
                     <Row type='flex' justify='center' style={{margin: '0px'}}>
-                        <p style={{ fontSize: '18px', fontWeight: 400, margin: 0, maxWidth: 800, color: '#7e7e7e', padding: 10 }}>
-                        Hello! I'm a recent graduate from Coventry University, holding a First-class honours degree in Computer Science. With a specialization in Web Development, I am passionate about creating accessible and impactful web applications. Currently, I am actively seeking professional development opportunities where I can hone my skills and broaden my knowledge base. I have a particular interest in leveraging technology to assist individuals with disabilities, aiming to make the digital world more inclusive for everyone.
-                        </p>
-                    </Row>
-                    <Row type='flex' justify='center' style={{margin: '0px'}}>
                         {/* <Col justify='center' style={{ margin: '10px'}}>
                             <Button type='primary' size='large' style={{ backgroundColor: '#2E4053'}}>Download CV<DownloadOutlined /></Button>
                         </Col> */}

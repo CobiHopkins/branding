@@ -9,9 +9,12 @@ class SkillsGrid extends React.Component {
 
         this.state = {
             skills: [
-                {id: 1, title: 'Frontend Development', desc: 'Frontend Development using HTML, CSS, and JavaScript frameworks such as React, Angular, and Vue.js'},
-                {id: 2, title: 'Database Management', desc: 'Database management using SQL and NoSQL databases such as MySQL, MongoDB, and PostgreSQL'},
-                {id: 3, title: 'Backend Development', desc: 'Backend Development using NodeJS (Koa, Express, Next, Knex, DiscordJS), Python Flask, and.'}
+                {id: 1, title: 'Git Version Control', desc: 'Proficient usage of Git for version control, including branching, merging, and resolving conflicts. Experienced with collaboration using GitHub.'},
+                {id: 2, title: 'JavaScript', desc: 'Skilled in JavaScript for creating dynamic and interactive web applications. Experience with ES6+, frameworks like React and Next, and asynchronous programming.'},
+                {id: 3, title: 'Backend Development', desc: 'Backend Development using NodeJS (Koa, Express, Next, Knex, DiscordJS), Python Flask, and.'},
+                {id: 4, title: 'Python (ML/AI)', desc: 'Front-end development using HTML, CSS, and JavaScript frameworks such as React, Angular, Vue.js.'},
+                {id: 5, title: 'C# (.NET MAUI)', desc: 'Mobile Development using C# and .NET MAUI. Implementation using MVVM and Supabase.'},
+                {id: 6, title: 'Discord Bots', desc: 'Experience with developing bots for Discord server management using DiscordJS (NodeJS), and Python'}
             ]
         };
     }
@@ -36,9 +39,14 @@ class SkillsGrid extends React.Component {
         });
 
         return (
-            <Row type='flex' justify='center'>
-                {skillsList}
-            </Row>
+            <>
+                <Row type='flex' justify='center' style={{width: '100%'}}>
+                    <h1 style={{fontSize: '40px'}}>Skills</h1>
+                </Row>
+                <Row type='flex' justify='center' style={{paddingBottom: 60, flexWrap: 1, maxWidth: 1050}}>
+                    {skillsList}
+                </Row>
+            </>
         )
     }
 }
