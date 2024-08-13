@@ -37,7 +37,6 @@
   }
 }
 
-
 .skills-list {
   display: flex;
   justify-content: center;
@@ -53,4 +52,45 @@
 .skill-animation {
   opacity: 1;
   transform: translateY(0px);
+}
+
+.quote-bar {
+
+}
+
+/* Animation for quotebar FadeInOut */
+.quote-bar-container {
+  /* animation: fadeInOut 5s infinite; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 1s ease-in-out;
+  width: 100%;
+  height: 500px;
+  background-color: rgba(230, 230, 230, 0.3);
+}
+
+.quote-bar-container > div {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+
+  15%, 85% {
+    opacity: 1;
+  }
 }

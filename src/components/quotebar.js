@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 const quoteStyle = {
     color: '#2E4053',
@@ -14,13 +14,32 @@ const authorStyle = {
     fontWeight: 'bold',
 };
 
-const lineStyle = {
-    width: '100%',
-    border: '1px solid #2E4053',
-};
+const quotes = [
+    {quote: "The good thing about science is that it's true whether or not you believe in it.", author: "Neil deGrasse Tyson"},
+    {quote: "Sometimes it's the people no one imagines anything of who do the things that no one can imagine", author: "The Imitation Game"},
+    {quote: "Every cloud has its silver lining, but it is sometimes difficult to get it to the mint.", author: "Don Marquis"}
+]
 
 
 function QuoteBar(props) {
+
+    const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+    const [isVisible, setIsVisible] = useState(true);
+
+    useEffect(() => {
+        const quoteInterval = setInterval(() => {
+            setIsVisible(false);
+
+            setTimeout(() => {
+                setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
+                setIsVisible(true);
+            }, 1000)
+        }, 5000);
+
+        return () => {
+            clearInterval(quoteInterval);
+        }
+    }, [quotes.length]);
 
 
     /* ToDo:
@@ -28,14 +47,12 @@ function QuoteBar(props) {
     *  Animate the scrolling through each quote.
     */
     return (
-        <>
-        <div className="quote-bar">
-            <hr style={lineStyle} />
-            <p style={quoteStyle}>{props.quote}</p>
-            <p style={authorStyle}>- {props.author}</p>
-            <hr style={lineStyle} />
+        <div className="quote-bar-container">
+            <div>
+            <p className={isVisible ? 'visible' : 'hidden'} style={quoteStyle}>{quotes[currentQuoteIndex].quote}</p>
+            <p className={isVisible ? 'visible' : 'hidden' } style={authorStyle}>- {quotes[currentQuoteIndex].author}</p>
+            </div>
         </div>
-    </>
     )
 }
 

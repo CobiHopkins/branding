@@ -7,6 +7,8 @@ import HomeAbout from './homeabout';
 import SkillsGrid from './skillsgrid';
 import QuoteBar from './quotebar';
 
+import hockeyVideo from '../assets/videos/hockey_stop_video.mp4';
+
 function Home(props) {
 
     return (
@@ -18,11 +20,18 @@ function Home(props) {
             <Row type='flex' justify='center' style={{ backgroundColor: '#31333B', color: 'white', minHeight: '100vh'}}>
                 <SkillsGrid />
             </Row>
-            <Row type='flex' justify='center' style={{backgroundColor: '#E6E6E6', padding: 40}}>
-                <QuoteBar quote="The good thing about science is that it's true whether or not you believe in it." author="Neil deGrasse Tyson" />
+            <Row type='flex' justify='center' className="quote-bar">
+                {/* Convert this video into a BackgroundVideo component. */}
+                    <video autoPlay muted loop style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', zIndex: '-100'}}>
+                        <source src={hockeyVideo} type="video/mp4" />
+                    </video>
+                <QuoteBar />
             </Row>
             <Row type='flex' justify='center' style={{ backgroundColor: '#2E4053', color: '#fff'}}>
                 <h1 style={{fontSize: 80}}>PROJECTS</h1>
+            </Row>
+            <Row type='flex' justify='center' style={{backgroundColor: '#e6e6e6', height: '500px', padding: '50'}}>
+                <h1>Hello World</h1>
             </Row>
         </div>
     );

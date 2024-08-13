@@ -7,7 +7,6 @@ const { Meta } = Card;
 // todo
 class SkillsCard extends React.Component {
     render() {
-        const skillID = this.props.id;
 
         return (
             <Card 
