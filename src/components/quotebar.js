@@ -21,6 +21,12 @@ const lineStyle = {
 
 
 function QuoteBar(props) {
+
+
+    /* ToDo:
+    *  Add a list of quotes to navigate through
+    *  Animate the scrolling through each quote.
+    */
     return (
         <>
         <div className="quote-bar">

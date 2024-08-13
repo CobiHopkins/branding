@@ -4,7 +4,6 @@ import { Row } from 'antd';
 // component imports
 import HomeHeader from './homeheader';
 import HomeAbout from './homeabout';
-import ProjectGrid from './projectgrid';
 import SkillsGrid from './skillsgrid';
 import QuoteBar from './quotebar';
 
@@ -25,9 +24,6 @@ function Home(props) {
             <Row type='flex' justify='center' style={{ backgroundColor: '#2E4053', color: '#fff'}}>
                 <h1 style={{fontSize: 80}}>PROJECTS</h1>
             </Row>
-            {/* <Row type='flex' justify='center' style={{ backgroundColor: '#2E4053', padding: 20}}>
-                <ProjectGrid />
-            </Row> */}
         </div>
     );
 }

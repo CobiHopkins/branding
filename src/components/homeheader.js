@@ -1,15 +1,13 @@
 import React from 'react';
-import { Row, Col, Button, Divider, Avatar } from 'antd';
+import { Row, Col, Divider, Avatar } from 'antd';
 import logo from '../assets/me_plain_red_green.jpg';
 import {
     GithubOutlined,
     XOutlined,
-    DiscordOutlined,
-    DownloadOutlined,
     LinkedinOutlined
 } from '@ant-design/icons';
 
-function HomeHeader(props) {
+function HomeHeader() {
     return (
         <Row type='flex' justify='space-around' style={{minHeight: 'calc(100vh - 64px)', backgroundColor: '#20242D', color: 'white'}}>
                 <Col style={{ alignSelf: 'center'}}>
@@ -34,11 +32,11 @@ function HomeHeader(props) {
                             <Button type='primary' size='large' style={{ backgroundColor: '#2E4053'}}>Download CV<DownloadOutlined /></Button>
                         </Col> */}
                         <Col justify='center' style={{ margin: '10px'}}>
-                            <a href='https://github.com/CobiHopkins' target='_blank' style={{ fontSize: 40, color: '#fff'}}><GithubOutlined /></a>
+                            <a href='https://github.com/CobiHopkins' target='_blank' rel="noreferrer" style={{ fontSize: 40, color: '#fff'}}><GithubOutlined /></a>
                             <Divider type="vertical" style={{padding: 10}}/>
-                            <a href='https://www.linkedin.com/in/cobihopkins/' target='_blank' style={{ fontSize: 40, color: '#fff'}}><LinkedinOutlined /></a>
+                            <a href='https://www.linkedin.com/in/cobihopkins/' rel="noreferrer"target='_blank' style={{ fontSize: 40, color: '#fff'}}><LinkedinOutlined /></a>
                             <Divider type="vertical" style={{padding: 10}}z />
-                            <a href='https://twitter.com/CeeJaeRL' target='_blank' style={{ fontSize: 40, color: '#fff'}}><XOutlined /></a>
+                            <a href='https://twitter.com/CeeJaeRL' target='_blank' rel="noreferrer" style={{ fontSize: 40, color: '#fff'}}><XOutlined /></a>
                         </Col>
                     </Row>
                 </Col>
