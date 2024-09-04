@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Card, Avatar } from 'antd';
-import logo from '../assets/academic-degree-1.png';
+import logo from '../../assets/academic-degree-1.png';
 
 const { Meta } = Card;
 

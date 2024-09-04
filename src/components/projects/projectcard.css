@@ -1,0 +1,117 @@
+.projectCard {
+	width: 800px;
+	height: 400px;
+	box-shadow: 5px 5px 20px #252525;
+	display: flex;
+	flex-direction: row;
+	margin: 20px auto;
+	padding: 10px;
+	background-color: white;
+	border-radius: 20px;
+}
+
+.projectCardImg {
+	width: 250px;
+	height: 250px;
+	align-self: center;
+	border-radius: 20px;
+}
+
+.projectCardImg img {
+	width: 250px;
+	height: 250px;
+	display: block;
+	position: absolute;
+	object-fit: cover;
+	object-position: center;
+	align-self: center;
+	transform: translateX(-90px);
+	border-radius: 20px;
+	box-shadow: 5px 5px 10px grey;
+}
+
+.projectCardContainer {
+	width: 100%;
+	height: 250px;
+	align-self: center;
+}
+
+.projectCardHeader {
+	width: 100%;
+	height: auto;
+    font-size: 20px;
+}
+
+.projectCardBody {
+	width: 100%;
+	height: auto;
+	letter-spacing: 0.75px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.projectCardFooter {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.projectCardFooter div {
+	padding: 0px 20px;
+	color: grey;
+	text-align: center;
+}
+
+/* .cardFooter div:not(:last-child) {
+	border-right: 2px solid grey;
+} */
+
+.sideButtons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 5px;
+}
+
+.sideBtn {
+	width: 10px;
+	height: 20px;
+	background-color: grey;
+	margin: 5px 0px;
+	border-radius: 2rem;
+	transition: all 0.2s ease-in-out;
+}
+
+.sideBtn:hover {
+	height: 40px;
+	transition: all 0.2s ease-in-out;
+}
+
+.activeBtn {
+	height: 40px;
+	background-color: #9EB7E5;
+}
+
+@media only screen and (max-width: 1000px) {
+	.projectCard {
+		width: 600px;
+		height: 350px;
+	}
+	
+	.projectCardImg, .projectCardImg img {
+		width: 200px;
+		height: 200px;
+	}
+	
+	.projectCardContainer {
+		height: 200px;
+	}
+	
+	.projectCardHeader h2, .projectCardFooter div h2 {
+		font-size: 18px;
+	}
+	
+	.projectCardBody p {
+		font-size: 14px;
+	}
+}

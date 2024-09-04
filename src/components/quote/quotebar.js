@@ -8,7 +8,7 @@ const quoteStyle = {
 };
 
 const authorStyle = {
-    color: '#FF8488',
+    color: '#F33A6A',
     fontSize: '18px',
     textAlign: 'left',
     fontWeight: 'bold',
@@ -39,7 +39,7 @@ function QuoteBar(props) {
         return () => {
             clearInterval(quoteInterval);
         }
-    }, [quotes.length]);
+    });
 
 
     /* ToDo:

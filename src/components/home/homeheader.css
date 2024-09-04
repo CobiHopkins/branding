@@ -1,0 +1,32 @@
+.socialLink {
+    font-size: 40px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    color: rgb(243, 58, 106);
+    transition: all 0.3s ease-in-out;
+}
+
+#heroImg {
+    animation: fade-in 5s;
+} 
+
+.header-text {
+    animation: fade-in 5s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100;
+    }
+}
