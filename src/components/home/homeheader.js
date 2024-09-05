@@ -29,13 +29,13 @@ function HomeHeader() {
                             }} src={logo}/>
                     </Row>
                     <Col style={{alignContent: "center", margin: "0px 40px"}}>
-                    <Row class="header-text" type='flex' justify='center'>
+                    <Row className="header-text" type='flex' justify='center'>
                         <h1 style={{fontSize: '60px', fontWeight: 800, margin: '0px'}}>Cobi Hopkins</h1>
                     </Row>
-                    <Row class="header-text" type='flex' justify='center'>
+                    <Row className="header-text" type='flex' justify='center'>
                         <h3 style={{ fontSize: '20px', fontWeight: 400, textTransform: 'uppercase', color: '#F33A6A'}}>Aspiring Full-Stack Web Developer</h3>
                     </Row>
-                    <Row class="header-text" type='flex' justify='center'>
+                    <Row className="header-text" type='flex' justify='center'>
                         <SocialLinks links={socialMediaLinks}/>
                     </Row>
                     </Col>

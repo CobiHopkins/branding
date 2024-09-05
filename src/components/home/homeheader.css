@@ -14,11 +14,11 @@
 }
 
 #heroImg {
-    animation: fade-in 5s;
+    animation: slide-in-from-left 1s;
 } 
 
 .header-text {
-    animation: fade-in 5s;
+    animation: slide-in-from-right 1s;
 }
 
 @keyframes fade-in {
@@ -28,5 +28,25 @@
 
     to {
         opacity: 100;
+    }
+}
+
+@keyframes slide-in-from-left {
+    from {
+        transform: translateX(-500px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-from-right {
+    from {
+        transform: translateX(500px);
+    }
+
+    to {
+        transform: translateX(0);
     }
 }
