@@ -12,7 +12,7 @@ const ProjectData = [
 	},
 	{
 		name: "Rest Web API - NodeJS (Koa)",
-		desc: "Suspendisse non ligula id lectus tincidunt accumsan. Donec sagittis elementum orci, sed efficitur nisl finibus et. Quisque mi felis, rutrum ac tristique quis, tristique non urna. Etiam ut ligula at lorem eleifend laoreet. Suspendisse mattis et lectus a eleifend. Vivamus suscipit urna vitae leo dictum aliquet. Integer in tellus lectus. Nulla facilisi.",
+		desc: "A social media API developed as part of my university course using NodeJS. This project provided me with the opportunity to explore several frameworks and development tools including KoaJS for backend, Passport.js for authentication via JWTs, and RBAC for enabling different levels of access based on user roles (user, admin, moderator, etc). The development of this project gave me a deeper insight into how internal and public APIs are developed and consumed.",
 		imgSrc: "https://s.yimg.com/ny/api/res/1.2/VA9CA8yfqUvM9JDKMSJHig--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQxNA--/https://media.zenfs.com/en/aol_uk_yahoo_celebrity_us_477/f2626b27de5c3e8846c7e08bf1bf1d17",
 		url: "https://github.coventry.ac.uk/hopkin70/6003CEM_backend_cw"
 	},
@@ -46,7 +46,7 @@ function ProjectCard() {
 				</div>
 				<div className="projectCardFooter">
 					<div className="projectInfo">
-						<a href={ProjectData[selectedProject].url}><GithubOutlined /></a>
+						<a href={ProjectData[selectedProject].url} target="_blank" rel="noreferrer"><GithubOutlined /></a>
 					</div>
 				</div>
 			</div>

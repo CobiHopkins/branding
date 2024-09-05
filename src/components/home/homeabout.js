@@ -1,13 +1,34 @@
-import React from 'react';
+import React, {useRef, useEffect} from 'react';
 
 import './about.css';
 import GraduationImage from '../../assets/me_graduation_july2024.jpg';
 
-function HomeAbout(props) {
+const applyAnimation = (entries) => {
+    const [entry] = entries;
+    if (entry.isIntersecting) {
+        entry.target.classList.add('about-animation');
+    }
+}
+
+
+function HomeAbout() {
+
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(applyAnimation, {threshold: 0.20});
+        if (containerRef.current) observer.observe(containerRef.current);
+
+        return () => {
+            if (containerRef.current) observer.unobserve(containerRef.current);
+            observer.disconnect();
+        }
+    }, []);
+
     return (
 
         <div class="about">
-            <div class="about-container">
+            <div class="about-container" ref={containerRef}>
                 <div class="about-image">
                     <img src={GraduationImage} alt="Cobi at his graduation holding his degree certificate." />
                 </div>
