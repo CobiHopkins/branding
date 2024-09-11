@@ -8,6 +8,8 @@ import {
     CodepenOutlined
 } from '@ant-design/icons';
 
+import './socialLinks.css';
+
 const SocialLinks = ({links}) => {
     const renderIcons = (platform) => {
         switch (platform) {

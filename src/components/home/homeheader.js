@@ -17,8 +17,8 @@ function HomeHeader() {
 
     return (
         <Row type='flex' justify='space-around' id="hero" style={{minHeight: 'calc(100vh - 64px)', backgroundColor: '#20242D', color: 'white'}}>
-                <Row style={{ alignSelf: 'center'}}>
-                    <Row type='flex' justify='center' style={{margin: '0px 40px'}}>
+                <Row className="hero-container" style={{ alignSelf: 'center'}}>
+                    <Row type='flex' className="hero-image" justify='center'>
                             <Avatar id="heroImg" size={{
                                 xs: 80,
                                 sm: 100,
@@ -30,10 +30,10 @@ function HomeHeader() {
                     </Row>
                     <Col style={{alignContent: "center", margin: "0px 40px"}}>
                     <Row className="header-text" type='flex' justify='center'>
-                        <h1 style={{fontSize: '60px', fontWeight: 800, margin: '0px'}}>Cobi Hopkins</h1>
+                        <h1>Cobi Hopkins</h1>
                     </Row>
                     <Row className="header-text" type='flex' justify='center'>
-                        <h3 style={{ fontSize: '20px', fontWeight: 400, textTransform: 'uppercase', color: '#F33A6A'}}>Aspiring Full-Stack Web Developer</h3>
+                        <h3>Aspiring Full-Stack Web Developer</h3>
                     </Row>
                     <Row className="header-text" type='flex' justify='center'>
                         <SocialLinks links={socialMediaLinks}/>
