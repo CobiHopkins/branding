@@ -1,24 +1,12 @@
 import React, {useState, useEffect} from 'react';
 
-const quoteStyle = {
-    color: '#2E4053',
-    fontSize: '24px',
-    textAlign: 'center',
-    fontStyle: 'italic',
-};
-
-const authorStyle = {
-    color: '#F33A6A',
-    fontSize: '18px',
-    textAlign: 'left',
-    fontWeight: 'bold',
-};
+import './quotebar.css';
 
 const quotes = [
     {quote: "The good thing about science is that it's true whether or not you believe in it.", author: "Neil deGrasse Tyson"},
     {quote: "Sometimes it's the people no one imagines anything of who do the things that no one can imagine", author: "The Imitation Game"},
     {quote: "Every cloud has its silver lining, but it is sometimes difficult to get it to the mint.", author: "Don Marquis"}
-]
+];
 
 
 function QuoteBar(props) {
@@ -48,9 +36,9 @@ function QuoteBar(props) {
     */
     return (
         <div className="quote-bar-container">
-            <div>
-            <p className={isVisible ? 'visible' : 'hidden'} style={quoteStyle}>{quotes[currentQuoteIndex].quote}</p>
-            <p className={isVisible ? 'visible' : 'hidden' } style={authorStyle}>- {quotes[currentQuoteIndex].author}</p>
+            <div className="quote-bar-text">
+            <p className={`quote ${isVisible ? 'visible' : 'hidden'}`}>{quotes[currentQuoteIndex].quote}</p>
+            <p className={`quoteAuthor ${isVisible ? 'visible' : 'hidden'}` }>- {quotes[currentQuoteIndex].author}</p>
             </div>
         </div>
     )
