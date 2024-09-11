@@ -23,13 +23,13 @@ function Home(props) {
             </Row>
             <Row type='flex' justify='center' className="quote-bar">
                 {/* Convert this video into a BackgroundVideo component. */}
-                    <video autoPlay muted loop style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', zIndex: '-100'}}>
+                    <video autoPlay muted loop playsinline style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', zIndex: '-100'}}>
                         <source src={hockeyVideo} type="video/mp4" />
                     </video>
                 <QuoteBar />
             </Row>
             <Row type='flex' justify='center' style={{ backgroundColor: '#2E4053', color: '#fff'}}>
-                <h1 style={{fontSize: 80}}>PROJECTS</h1>
+                <h1 style={{fontSize: 40}}>PROJECTS</h1>
             </Row>
             <Row type='flex' justify='center' style={{backgroundColor: "#2E4053", height: '500px', padding: '50'}}>
                 <ProjectCard />
