@@ -14,17 +14,13 @@ const { Header, Content } = Layout;
 
 function App() {
   return (
-    <Router>
+    <>
       <Header style={{ backgroundColor: '#20242D', padding: 0}}>
         <Nav />
       </Header>
 
-      <Content>
-        <Switch>
-          <Route path='/' children={<Home />} exact />
-        </Switch>
-      </Content>
-    </Router>
+      <Home />
+    </>
   )
 }
 
