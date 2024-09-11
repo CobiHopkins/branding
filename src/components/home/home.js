@@ -10,6 +10,8 @@ import ProjectCard from '../projects/projectcard';
 
 import hockeyVideo from '../../assets/videos/hockey_stop_video.mp4';
 
+import './home.css';
+
 function Home(props) {
 
     return (
@@ -23,7 +25,7 @@ function Home(props) {
             </Row>
             <Row type='flex' justify='center' className="quote-bar">
                 {/* Convert this video into a BackgroundVideo component. */}
-                    <video autoPlay muted loop playsinline style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', zIndex: '-100'}}>
+                    <video class="video-background" autoPlay muted={true} loop playsInline>
                         <source src={hockeyVideo} type="video/mp4" />
                     </video>
                 <QuoteBar />
