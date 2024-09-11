@@ -27,6 +27,7 @@
     font-weight: 400;
     text-transform: uppercase;
     color: #F33A6A;
+    text-align: center;
 }
 
 @keyframes fade-in {

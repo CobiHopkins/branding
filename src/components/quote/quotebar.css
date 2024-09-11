@@ -1,5 +1,5 @@
 .quote-bar {
-
+  overflow: hidden;
 }
 
 /* Animation for quotebar FadeInOut */

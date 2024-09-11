@@ -16,7 +16,7 @@ const socialMediaLinks = [
 function HomeHeader() {
 
     return (
-        <Row type='flex' justify='space-around' id="hero" style={{minHeight: 'calc(100vh - 64px)', backgroundColor: '#20242D', color: 'white'}}>
+        <Row type='flex' justify='space-around' id="hero" style={{height: 'calc(100vh - 64px)', backgroundColor: '#20242D', color: 'white'}}>
                 <Row className="hero-container" style={{ alignSelf: 'center'}}>
                     <Row type='flex' className="hero-image" justify='center'>
                             <Avatar id="heroImg" size={{
