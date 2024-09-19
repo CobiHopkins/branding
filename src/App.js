@@ -7,26 +7,20 @@ import {
 } from 'react-router-dom';
 import './App.css';
 
-import Nav from './components/nav';
-import Home from './components/home';
-import Projects from './components/projects';
+import Nav from './components/navigation/nav';
+import Home from './components/home/home';
 
 const { Header, Content } = Layout;
 
 function App() {
   return (
-    <Router>
-      <Header style={{ backgroundColor: '#20242D'}}>
+    <>
+      <Header style={{ backgroundColor: '#20242D', padding: 0}}>
         <Nav />
       </Header>
 
-      <Content>
-        <Switch>
-          <Route path='/' children={<Home />} exact />
-          <Route path='/projects' children={<Projects />} />
-        </Switch>
-      </Content>
-    </Router>
+      <Home />
+    </>
   )
 }
 
