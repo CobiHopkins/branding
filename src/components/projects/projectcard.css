@@ -114,10 +114,6 @@
 		height: 200px;
 	}
 	
-	.projectCardContainer {
-		height: 200px;
-	}
-	
 	.projectCardHeader h2, .projectCardFooter div h2 {
 		font-size: 18px;
 	}
