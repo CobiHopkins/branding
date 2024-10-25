@@ -26,7 +26,7 @@ function HomeHeader() {
                                 lg: 240,
                                 xl: 360,
                                 xxl: 480
-                            }} src={logo}/>
+                            }} src={logo} alt="A computer generated image of Cobi Hopkins"/>
                     </Row>
                     <Col style={{alignContent: "center", margin: "0px 40px"}}>
                     <Row className="header-text" type='flex' justify='center'>

@@ -36,7 +36,7 @@ function ProjectCard() {
 	return (
 		<div className="projectCard" id="projects">
 			<div className="projectCardImg">
-				<img src={ProjectData[selectedProject].imgSrc} alt="#"/>
+				<img src={ProjectData[selectedProject].imgSrc} alt="An image of space with a large collection of stars."/>
 			</div>
 			<div className="projectCardContainer">
 				<div className="projectCardHeader">

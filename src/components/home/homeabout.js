@@ -30,7 +30,7 @@ function HomeAbout() {
         <div class="about">
             <div class="about-container" ref={containerRef}>
                 <div class="about-image">
-                    <img src={GraduationImage} alt="Cobi at his graduation holding his degree certificate." />
+                    <img src={GraduationImage} alt="Cobi at his graduation holding his degree certificate."/>
                 </div>
                 <div class="about-text">
                     <p>

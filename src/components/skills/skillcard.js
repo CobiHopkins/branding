@@ -14,7 +14,7 @@ class SkillsCard extends React.Component {
                 hoverable={false}
                 >
                     <Row type='flex' justify={'center'}>
-                        <Avatar size={75} src={this.props.src} shape='square' style={{marginTop: 20, marginBottom: 40}} />
+                        <Avatar size={75} src={this.props.src} shape='square' style={{marginTop: 20, marginBottom: 40}} alt="An SVG image of a blue and white graduation cap encased in a white circle." />
                     </Row>
                     <Meta title={
                         <>
