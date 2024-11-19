@@ -27,7 +27,7 @@ function QuoteBar(props) {
         return () => {
             clearInterval(quoteInterval);
         }
-    });
+    }, []);
 
 
     /* ToDo:

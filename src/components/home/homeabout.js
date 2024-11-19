@@ -17,10 +17,12 @@ function HomeAbout() {
 
     useEffect(() => {
         const observer = new IntersectionObserver(applyAnimation, {threshold: 0.20});
-        if (containerRef.current) observer.observe(containerRef.current);
+
+        const currentRef = containerRef.current; 
+        if (currentRef) observer.observe(currentRef);
 
         return () => {
-            if (containerRef.current) observer.unobserve(containerRef.current);
+            if (currentRef) observer.unobserve(currentRef);
             observer.disconnect();
         }
     }, []);
