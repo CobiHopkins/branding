@@ -36,7 +36,7 @@ function ProjectCard() {
 	return (
 		<div className="projectCard" id="projects">
 			<div className="projectCardImg">
-				<img src={ProjectData[selectedProject].imgSrc} alt="An image of space with a large collection of stars."/>
+				<img src={ProjectData[selectedProject].imgSrc} alt="Space with a large collection of stars."/>
 			</div>
 			<div className="projectCardContainer">
 				<div className="projectCardHeader">
@@ -54,9 +54,9 @@ function ProjectCard() {
 				</div>
 			</div>
 			<div className="sideButtons">
-				<div className="sideBtn" onClick={() => setSelectedProject(0)}></div>
-				<div className="sideBtn activeBtn" onClick={() => setSelectedProject(1)}></div>
-				<div className="sideBtn" onClick={() => setSelectedProject(2)}></div>
+				<div className={`sideBtn ${selectedProject === 0 ? "activeBtn" : undefined}`} onClick={() => setSelectedProject(0)}></div>
+				<div className={`sideBtn ${selectedProject === 1 ? "activeBtn" : undefined}`} onClick={() => setSelectedProject(1)}></div>
+				<div className={`sideBtn ${selectedProject === 2 ? "activeBtn" : undefined}`} onClick={() => setSelectedProject(2)}></div>
 			</div>
 		</div>
 	)
