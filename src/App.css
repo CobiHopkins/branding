@@ -2,19 +2,15 @@
   text-align: center;
 }
 
-.fh-container {
-  height: 100vh;
-  background-color: #1e1e1e;
-  color: white;
-  margin: 0;
+h1 {
+  font-size: 2em;
 }
 
-.light-h2 {
-  font-size: 32px;
-  font-weight: 300;
+.fh-container {
+  height: 100vh;
+  background-color: #1E1E1E;
+  color: #FFFFFF;
   margin: 0;
-  max-width: 500px;
-  text-align: center;
 }
 
 .centered-flex {
@@ -22,15 +18,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-
-.bg-gradient-ltb {
-  background: linear-gradient(to bottom, #1E1E1E 15%, #000 100%);
-}
-
-.border-br25 {
-  border-bottom-left-radius: 150px;
-  border-bottom-right-radius: 150px;
 }
 
 .btn {
@@ -43,18 +30,69 @@
   cursor: pointer;
 }
 
+.award-container {
+  background-color: #000000;
+}
+
+.padding-20 {
+  padding: 20px;
+}
+
+/*************************/
+/* Border Radius Classes */
+/*************************/
+.border-brl100 {
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.border-br150 {
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+}
+
 /*******************************/
 /*  Background Colour Classes  */
 /*******************************/
+.bg-black {
+  background-color: #000000;
+}
+
+.bg-darkgray {
+  background-color: #1E1E1E;
+}
 
 .bg-gold {
   background-color: #9B812A;
 }
 
+.bg-24 {
+  background-color: #242424;
+}
+/*******************************/
+/* Background Gradient Classes */
+/*******************************/
+.bg-gradient-ltb {
+  background: linear-gradient(to bottom, #1E1E1E 15%, #000000 100%);
+}
+
+.bg-gradient-ltb-alt {
+  background: linear-gradient(to bottom, #000000 15%, #1E1E1E 100%);
+}
+
 /**********************/
 /* Text Color Classes */
 /**********************/
-
 .txt-white {
-  color: #ffffff;
+  color: #FFFFFF;
+}
+
+.txt-gold {
+  color: #9B812A;
+}
+/***********************/
+/* Text Weight Classes */
+/***********************/
+.txt-wlight {
+  font-weight: 300;
 }

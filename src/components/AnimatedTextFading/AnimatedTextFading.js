@@ -25,7 +25,7 @@ const AnimatedTextFading = ({animationDelay = 5000, items}) => {
 
     return (
         <section className="animated-text">
-            <h2 className={`light-h2 ${isVisible ? 'visible' : 'hidden'}`}>
+            <h2 className={`txt-wlight ${isVisible ? 'visible' : 'hidden'}`}>
                 {items[currentItemIndex]}
             </h2>
         </section>

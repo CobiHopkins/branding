@@ -19,3 +19,8 @@
 .border-r50 {
     border-radius: 50px;
 }
+
+.btn-hero {
+    padding: 20px 40px;
+    font-size: 16px;
+}

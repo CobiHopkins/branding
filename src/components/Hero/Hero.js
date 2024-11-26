@@ -29,7 +29,7 @@ function Hero({avatar, avatarAltText, title, description, allowDescriptionAnimat
                 
                 <h1>{title}</h1>
                 {allowDescriptionAnimation ? AnimatedText : StaticText}
-                <button className="btn bg-gold border-r50 txt-white" style={{fontSize: 14}}>Contact Me</button>
+                <button className="btn btn-hero bg-gold border-r50 txt-white">Contact Me</button>
             </section>
         </section>
     );
