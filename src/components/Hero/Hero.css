@@ -1,0 +1,21 @@
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.hero-container img {
+    max-width: 240px;
+    border-radius: 50%;
+}
+
+.hero-container h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.border-r50 {
+    border-radius: 50px;
+}
