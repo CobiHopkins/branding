@@ -6,3 +6,11 @@
     max-width: 750px;
     margin: 0 auto;
 }
+
+.skill-container {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
