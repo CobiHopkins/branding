@@ -1,14 +1,16 @@
 import React from 'react';
+import { Divider } from "@mui/material";
 import "./Home.css";
 import Hero from "../../components/Hero/Hero";
-import AwardCard from "../../components/AwardCard/AwardCard";
 import SkillCard from "../../components/SkillCard/SkillCard";
+import TextImageComponent from "../../components/TextImageComponent/TextImageComponent";
 
 import { FaGitAlt, FaDatabase, FaPython, FaHtml5, FaCss3Alt, FaFigma } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io5";
 import { PiFileCSharpDuotone } from "react-icons/pi";
 
-import Me from "../../assets/me_green.jpg";
+import Grading from "../../assets/undraw_grading.svg";
+import Graduation from "../../assets/undraw_graduation.svg";
 
 const AwardData = [
     {id: 1, title: "Highest Achieving Student", date: "2015 - 2016", provider: "Warwickshire College", description: "Was the highest achieving student on my Level 2 IT course."},
@@ -19,6 +21,7 @@ const AwardData = [
 const HeroDescriptions = [
     "Let's collaborate and build accessible web applications",
     "I'm a web developer with a passion for design and user experience",
+    "Commited to making technology more inclusive and accessible for everyone."
 ]
 
 const SkillData = [
@@ -35,54 +38,37 @@ const SkillData = [
 const Home = () => {
     return (
         <section id="home">
-            <section className="fh-container centered-flex bg-gradient-ltb border-br150">
                 <Hero 
-                    avatar={Me}
-                    avatarAltText="Cobi Hopkins created by an AI"
-                    title="Hi, I'm Cobi Hopkins"
+                    title="Hey, I'm Cobi"
                     description={HeroDescriptions}    
                 />
-            </section>
-            <section className="award-container">
-                <main className="centered-flex border-brl100 bg-24 padding-20">
-                    {AwardData.map((award) => {
-                        return (
-                            <AwardCard 
-                                key={award.id}
-                                title={award.title}
-                                date={award.date}
-                                provider={award.provider}
-                                description={award.description}
-                            />
-                        );
-                    })}
-                </main>
-            </section>
-            <section className="about-container bg-gradient-ltb-alt">
-                <section className="padding-20">
-                    <header className="about-header centered-flex">
-                        <h1 className="txt-white" style={{textAlign: "center"}}>About Me</h1>
-                    </header>
-                    <main className="about-main">
-                        <p className="txt-white">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel mattis velit, ut accumsan sem. Nulla cursus velit eget dolor convallis placerat. Sed imperdiet dui id urna elementum, nec viverra quam efficitur. Pellentesque vel erat sollicitudin, faucibus arcu ac, consectetur ipsum. Aenean scelerisque id nibh ut varius. Integer sed sem vitae elit eleifend mattis. Sed gravida ullamcorper ligula, ut convallis tellus ullamcorper ut. Maecenas et dui pellentesque, gravida leo vel, lacinia tellus. In hendrerit volutpat augue, in pulvinar leo sollicitudin vitae. Donec nec diam odio. Suspendisse potenti. Donec cursus aliquam orci, vel feugiat massa sagittis eu.
-                        </p>
-                    </main>
-                </section>
-                <section className="skill-container">
-                    {SkillData.map((skill) => {
-                        return (
-                            <SkillCard
+                <section className="skills">
+                    <h2 style={{margin: 0, fontSize: 48, fontWeight: 100, color: "white", padding: 40}}>Skills</h2>
+                    <main className="skill-container">
+                        {SkillData.map((skill) => (
+                            <SkillCard 
                                 key={skill.id}
-                                icon={skill.icon}
-                                iconAltText={skill.name}
                                 title={skill.name}
                                 description={skill.description}
+                                icon={skill.icon}
                             />
-                        )
-                    })}
+                        ))}
+                    </main>
                 </section>
-            </section>
+                <section style={{
+                    background: "linear-gradient(#1E1E1E, #242424)",
+                    padding: "0px 20px"
+                }}>
+                    <TextImageComponent
+                        title="Highest Achieving Student"
+                        text="  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate mauris quis diam vulputate ultricies. Vestibulum ultrices arcu vitae libero sollicitudin eleifend sit amet auctor dolor. Aliquam ante dolor, varius nec molestie ac, dictum sollicitudin leo. Duis ut lorem et est gravida malesuada. Mauris a erat elit. Maecenas ornare nulla diam, nec pulvinar sapien molestie vitae. Pellentesque interdum, mi ut interdum suscipit, elit risus sodales nisi, ac luctus nunc ex eget massa. Aenean orci sapien, luctus quis porttitor et, porta et mauris. Integer consectetur sapien eget dui accumsan fringilla. Sed hendrerit ultrices elit id suscipit."
+                        imageSrc={Grading}
+                        imageAlt="Illustration"
+                        imageOnLeft={true}
+                    />
+
+                </section>
         </section>
     );
 }

@@ -1,4 +1,5 @@
 import "./Hero.css";
+import { Button, Typography } from "@mui/material";
 import AnimatedTextFading from "../AnimatedTextFading/AnimatedTextFading";
 
 /**
@@ -10,7 +11,7 @@ import AnimatedTextFading from "../AnimatedTextFading/AnimatedTextFading";
  * @param {boolean} allowDescriptionAnimation - Whether to allow description animations or not. If false, only the first description is used.
  */
 
-function Hero({avatar, avatarAltText, title, description, allowDescriptionAnimation = true}) {
+function Hero({avatar, avatarAltText, title = null, description, allowDescriptionAnimation = true}) {
     
     const AnimatedText = (
         <AnimatedTextFading 
@@ -23,14 +24,10 @@ function Hero({avatar, avatarAltText, title, description, allowDescriptionAnimat
     )
     
     return (
-        <section className="hero">
-            <section className="hero-container">
-                <img src={ avatar } alt={ avatarAltText }/>
-                
-                <h1>{title}</h1>
+        <section class="hero">
+                {title && <h1>{title}</h1>}
                 {allowDescriptionAnimation ? AnimatedText : StaticText}
-                <button className="btn btn-hero bg-gold border-r50 txt-white">Contact Me</button>
-            </section>
+                <Button variant="outlined" style={{borderColor: "#9B812A", color: "#9B812A"}} disableElevation>Contact Me</Button>
         </section>
     );
 }
