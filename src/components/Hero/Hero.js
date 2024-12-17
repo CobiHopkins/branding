@@ -24,7 +24,7 @@ function Hero({avatar, avatarAltText, title = null, description, allowDescriptio
     )
     
     return (
-        <section class="hero">
+        <section className="hero">
                 {title && <h1>{title}</h1>}
                 {allowDescriptionAnimation ? AnimatedText : StaticText}
                 <Button variant="outlined" style={{borderColor: "#9B812A", color: "#9B812A"}} disableElevation>Contact Me</Button>

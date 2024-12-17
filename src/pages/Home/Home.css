@@ -16,3 +16,8 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.text-image-container {
+    background: linear-gradient(#1E1E1E, #242424);
+    padding: "0px 20px";
+}

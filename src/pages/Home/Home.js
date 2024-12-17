@@ -55,19 +55,24 @@ const Home = () => {
                         ))}
                     </main>
                 </section>
-                <section style={{
-                    background: "linear-gradient(#1E1E1E, #242424)",
-                    padding: "0px 20px"
-                }}>
+                <section className="text-image-container">
                     <TextImageComponent
                         title="Highest Achieving Student"
-                        text="  
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate mauris quis diam vulputate ultricies. Vestibulum ultrices arcu vitae libero sollicitudin eleifend sit amet auctor dolor. Aliquam ante dolor, varius nec molestie ac, dictum sollicitudin leo. Duis ut lorem et est gravida malesuada. Mauris a erat elit. Maecenas ornare nulla diam, nec pulvinar sapien molestie vitae. Pellentesque interdum, mi ut interdum suscipit, elit risus sodales nisi, ac luctus nunc ex eget massa. Aenean orci sapien, luctus quis porttitor et, porta et mauris. Integer consectetur sapien eget dui accumsan fringilla. Sed hendrerit ultrices elit id suscipit."
-                        imageSrc={Grading}
+                        subtitle="2015-2016"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate mauris quis diam vulputate ultricies. Vestibulum ultrices arcu vitae libero sollicitudin eleifend sit amet auctor dolor. Aliquam ante dolor, varius nec molestie ac, dictum sollicitudin leo. Duis ut lorem et est gravida malesuada. Mauris a erat elit. Maecenas ornare nulla diam, nec pulvinar sapien molestie vitae. Pellentesque interdum, mi ut interdum suscipit, elit risus sodales nisi, ac luctus nunc ex eget massa. Aenean orci sapien, luctus quis porttitor et, porta et mauris. Integer consectetur sapien eget dui accumsan fringilla. Sed hendrerit ultrices elit id suscipit."
+                        imageSrc="https://images.pexels.com/photos/2098578/pexels-photo-2098578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                         imageAlt="Illustration"
-                        imageOnLeft={true}
+                        imageOnRight={true}
                     />
 
+                    <TextImageComponent
+                        title="Student of the Year"
+                        subtitle="2016-2018"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate mauris quis diam vulputate ultricies. Vestibulum ultrices arcu vitae libero sollicitudin eleifend sit amet auctor dolor. Aliquam ante dolor, varius nec molestie ac, dictum sollicitudin leo. Duis ut lorem et est gravida malesuada. Mauris a erat elit. Maecenas ornare nulla diam, nec pulvinar sapien molestie vitae. Pellentesque interdum, mi ut interdum suscipit, elit risus sodales nisi, ac luctus nunc ex eget massa. Aenean orci sapien, luctus quis porttitor et, porta et mauris. Integer consectetur sapien eget dui accumsan fringilla. Sed hendrerit ultrices elit id suscipit."
+                        imageSrc="https://images.pexels.com/photos/326259/pexels-photo-326259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        imageAlt="Pink suit"
+                        imageOnRight={false}
+                    />
                 </section>
         </section>
     );
