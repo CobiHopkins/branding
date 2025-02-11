@@ -1,12 +1,16 @@
 import { useState, useEffect} from "react";
+import { Box, Typography } from "@mui/material";
 import "./AnimatedTextFading.css";
 /**
  * 
- * @param {*} param0 
+ * @param {Number} animationDelay - The duration of the delay between changes in display.
+ * @param {List} items - The items to iterate over.
+ * @param {String} variant - The typography variant from Material UI.
+ * @param {List} className - A list of classes to added to the typography component.
  * @returns 
  */
 
-const AnimatedTextFading = ({animationDelay = 5000, items}) => {
+const AnimatedTextFading = ({animationDelay = 5000, items, variant="h1", className}) => {
     const [currentItemIndex, setCurrentItemIndex] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
 
@@ -24,11 +28,9 @@ const AnimatedTextFading = ({animationDelay = 5000, items}) => {
     }, []);
 
     return (
-        <section className="animated-text">
-            <h2 className={`txt-wlight ${isVisible ? 'visible' : 'hidden'}`}>
-                {items[currentItemIndex]}
-            </h2>
-        </section>
+        <Typography variant={variant} className={`${className} ${isVisible ? 'visible' : 'hidden'}`}>
+            {items[currentItemIndex]}
+        </Typography>
     );
 }
 

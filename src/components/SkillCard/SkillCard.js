@@ -1,18 +1,20 @@
 import "./SkillCard.css";
+import {Box, Typography } from "@mui/material";
+
 
 const SkillCard = ({ icon: Icon, iconAltText, title, description }) => {
 
 
     return (
-        <section className="skill-card">
-            <header>
+        <Box component="section" className="skill-card">
+            <Box component="header">
                 <Icon size={40} className="skill-icon" />
-            </header>
-            <main>
-                <h3 className="skill-title">{title}</h3>
-                <p className="skill-description">{description}</p>
-            </main>
-        </section>
+            </Box>
+            <Box component="main">
+                <Typography variant="h6" sx={{ mb: 0.5 }}>{title}</Typography>
+                <Typography variant="body2">{description}</Typography>
+            </Box>
+        </Box>
     );
 }
 

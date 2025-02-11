@@ -1,27 +1,26 @@
 import React from 'react';
-import { Divider } from "@mui/material";
 import "./Home.css";
 import Hero from "../../components/Hero/Hero";
 import SkillCard from "../../components/SkillCard/SkillCard";
 import TextImageComponent from "../../components/TextImageComponent/TextImageComponent";
+import ThreeTierCard from '../../components/ThreeTierCard/ThreeTierCard';
+import BaseButton from "../../components/BaseButton/BaseButton";
+import { Box, Typography, Stack } from "@mui/material";
 
 import { FaGitAlt, FaDatabase, FaPython, FaHtml5, FaCss3Alt, FaFigma } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io5";
 import { PiFileCSharpDuotone } from "react-icons/pi";
 
-import Grading from "../../assets/undraw_grading.svg";
-import Graduation from "../../assets/undraw_graduation.svg";
-
 const AwardData = [
-    {id: 1, title: "Highest Achieving Student", date: "2015 - 2016", provider: "Warwickshire College", description: "Was the highest achieving student on my Level 2 IT course."},
-    {id: 2, title: "Student of the Year", date: "2017-2018", provider: "Warwickshire College", description: "Awarded for the quality of my work on my Level 3 IT course, whilst also supporting my peers."},
-    {id: 3, title: "Outstanding Achievement", date: "2016-2018", provider: "Warwickshire College", description: "Awarded for achieving D*D*D on my Level 3 IT course."}
+    {id: 1, title: "Highest Achieving Student", date: "2015 - 2016", description: "Mauris cursus tincidunt hendrerit. Maecenas quis augue vitae velit varius tempor vel sed mi. Suspendisse eu lorem quis enim tempor dignissim. Duis finibus justo vel dui gravida, et viverra ipsum ullamcorper. Sed et ornare elit. Fusce ultricies interdum sollicitudin. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin blandit eget urna auctor pharetra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam nunc augue, varius sed sem ac, tristique blandit velit", imageSrc: "https://images.pexels.com/photos/2098578/pexels-photo-2098578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+    {id: 2, title: "Student of the Year", date: "2017-2018", description: "Mauris cursus tincidunt hendrerit. Maecenas quis augue vitae velit varius tempor vel sed mi. Suspendisse eu lorem quis enim tempor dignissim. Duis finibus justo vel dui gravida, et viverra ipsum ullamcorper. Sed et ornare elit. Fusce ultricies interdum sollicitudin. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin blandit eget urna auctor pharetra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam nunc augue, varius sed sem ac, tristique blandit velit", imageSrc: "https://images.pexels.com/photos/326259/pexels-photo-326259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+    {id: 3, title: "Outstanding Achievement", date: "2016-2018", description: "Mauris cursus tincidunt hendrerit. Maecenas quis augue vitae velit varius tempor vel sed mi. Suspendisse eu lorem quis enim tempor dignissim. Duis finibus justo vel dui gravida, et viverra ipsum ullamcorper. Sed et ornare elit. Fusce ultricies interdum sollicitudin. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin blandit eget urna auctor pharetra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam nunc augue, varius sed sem ac, tristique blandit velit", imageSrc: "https://images.pexels.com/photos/7005233/pexels-photo-7005233.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
 ]
 
 const HeroDescriptions = [
     "Let's collaborate and build accessible web applications",
     "I'm a web developer with a passion for design and user experience",
-    "Commited to making technology more inclusive and accessible for everyone."
+    "Commited to making technology more inclusive and accessible"
 ]
 
 const SkillData = [
@@ -35,16 +34,24 @@ const SkillData = [
     {id: 8, name: "Databases", description: "SQL / NoSQL", icon: FaDatabase},
 ]
 
+const projectData = [
+    {title: "Project One", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac molestie lacus. In lobortis tincidunt libero, vel euismod magna varius eu. Suspendisse a viverra enim, non vulputate diam. Nullam ut auctor nisl. Curabitur laoreet justo eget finibus mattis. Mauris enim ex, ullamcorper vitae mauris vitae", linkHref: "/projects/project1", linkText: "Read more about Project One"},
+    {title: "Project Two", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac molestie lacus. In lobortis tincidunt libero, vel euismod magna varius eu. Suspendisse a viverra enim, non vulputate diam. Nullam ut auctor nisl. Curabitur laoreet justo eget finibus mattis. Mauris enim ex, ullamcorper vitae mauris vitae", linkHref: "/projects/project2", linkText: "Read more about Project Two"},
+    {title: "Project Three", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac molestie lacus. In lobortis tincidunt libero, vel euismod magna varius eu. Suspendisse a viverra enim, non vulputate diam. Nullam ut auctor nisl. Curabitur laoreet justo eget finibus mattis. Mauris enim ex, ullamcorper vitae mauris vitae", linkHref: "/projects/project3", linkText: "Read more about Project Three"}
+]
+
 const Home = () => {
     return (
-        <section id="home">
+        <>
                 <Hero 
                     title="Hey, I'm Cobi"
-                    description={HeroDescriptions}    
+                    description={HeroDescriptions}
+                    allowDescriptionAnimation={true}
                 />
-                <section className="skills">
-                    <h2 style={{margin: 0, fontSize: 48, fontWeight: 100, color: "white", padding: 40}}>Skills</h2>
-                    <main className="skill-container">
+                <Box component="section" className="skills">
+
+                    <Typography variant="h2" sx={{ mb: 2, color: "primary.light" }}>Skills</Typography>
+                    <Box component="main" className="skill-container">
                         {SkillData.map((skill) => (
                             <SkillCard 
                                 key={skill.id}
@@ -53,28 +60,41 @@ const Home = () => {
                                 icon={skill.icon}
                             />
                         ))}
-                    </main>
-                </section>
-                <section className="text-image-container">
-                    <TextImageComponent
-                        title="Highest Achieving Student"
-                        subtitle="2015-2016"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate mauris quis diam vulputate ultricies. Vestibulum ultrices arcu vitae libero sollicitudin eleifend sit amet auctor dolor. Aliquam ante dolor, varius nec molestie ac, dictum sollicitudin leo. Duis ut lorem et est gravida malesuada. Mauris a erat elit. Maecenas ornare nulla diam, nec pulvinar sapien molestie vitae. Pellentesque interdum, mi ut interdum suscipit, elit risus sodales nisi, ac luctus nunc ex eget massa. Aenean orci sapien, luctus quis porttitor et, porta et mauris. Integer consectetur sapien eget dui accumsan fringilla. Sed hendrerit ultrices elit id suscipit."
-                        imageSrc="https://images.pexels.com/photos/2098578/pexels-photo-2098578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        imageAlt="Illustration"
-                        imageOnRight={true}
-                    />
-
-                    <TextImageComponent
-                        title="Student of the Year"
-                        subtitle="2016-2018"
-                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate mauris quis diam vulputate ultricies. Vestibulum ultrices arcu vitae libero sollicitudin eleifend sit amet auctor dolor. Aliquam ante dolor, varius nec molestie ac, dictum sollicitudin leo. Duis ut lorem et est gravida malesuada. Mauris a erat elit. Maecenas ornare nulla diam, nec pulvinar sapien molestie vitae. Pellentesque interdum, mi ut interdum suscipit, elit risus sodales nisi, ac luctus nunc ex eget massa. Aenean orci sapien, luctus quis porttitor et, porta et mauris. Integer consectetur sapien eget dui accumsan fringilla. Sed hendrerit ultrices elit id suscipit."
-                        imageSrc="https://images.pexels.com/photos/326259/pexels-photo-326259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        imageAlt="Pink suit"
-                        imageOnRight={false}
-                    />
-                </section>
-        </section>
+                    </Box>
+                </Box>
+                <Box component="section" className="text-image-container">
+                    {AwardData.map((award) => (
+                        <TextImageComponent
+                            key={award.id}
+                            title={award.title}
+                            subtitle={award.date}
+                            text={award.description}
+                            imageSrc={award.imageSrc}
+                            imageAlt="Pexels image"
+                            imageOnRight={award.id % 2 === 0 ? false : true}
+                            imageSize="large"
+                        />
+                    ))}
+                </Box>
+                <Box component="section" display="flex" flexDirection="column" alignItems="center" sx={{
+                    margin: "40px 0px"
+                }}>
+                    <Typography variant="h2" color="primary.light">Recent Projects</Typography>
+                    <Stack direction="row" spacing={0} alignContent="center" justifyContent="center"  sx={{ margin: "20px 0px"}}>
+                        {
+                            projectData.map((project) => (
+                                <ThreeTierCard
+                                    title={project.title}
+                                    description={project.description}
+                                    footerLinkHref={project.linkHref}
+                                    footerLinkText={project.linkText}
+                                />
+                            ))
+                        }
+                    </Stack>
+                    <BaseButton component="a" href="projects" variant="outlined" color="secondary.dark" text="View More" />
+                </Box>
+        </>
     );
 }
 
