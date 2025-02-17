@@ -9,11 +9,11 @@ const ProjectGrid = ({projects}) => {
             {projects.map((project, index) => (
                 <TextImageComponent 
                     key={index}
-                    title={project.name}
-                    text={project.description[0]}
-                    imageSize="small"
+                    title={project.title}
+                    text={project.description}
+                    imageSize="medium"
                     buttonText="Read More"
-                    buttonHref={`projects/${project.id}`}
+                    buttonHref={`projects/${project.ID}`}
                 />
             ))}
         </Stack>

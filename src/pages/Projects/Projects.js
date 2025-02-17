@@ -1,17 +1,45 @@
+import { useState, useEffect } from 'react';
 import ProjectGrid from "../../components/ProjectGrid/ProjectGrid";
-
-const ProjectData = [
-    {id: 1, name: "ND Assist", description: ["This is the first paragraph description", "This is the second paragraph description"], tags: ["JavaScript", "HTML", "CSS"], link: "https://github.coventry.ac.uk/hopkin70/6001CEM-Chrome-Extension"},
-    {id: 2, name: "Project2", description: ["This is the first paragraph description", "This is the second paragraph description"], tags: [], link: ""},
-    {id: 3, name: "Project3", description: ["This is the first paragraph description", "This is the second paragraph description"], tags: [], link: ""}
-]
+import BannerWithSingleText from '../../components/BannerWithSingleText/BannerWithSingleText';
 
 const Projects = () => {
 
+    const [projects, setProjects] = useState([]);
+    const [ loading, setLoading ] = useState(true);
+
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+            const response = await fetch('http://localhost:3030/api/v1/projects', {
+                method: 'GET',
+                mode: 'cors'
+            });
+
+            if (!response.ok) {
+                console.log('An error occurred.');
+                return;
+            }
+
+            const data = await response.json();
+            setProjects(data);
+            setLoading(false);
+
+            return data;
+        }
+
+        fetchData();
+
+        return;
+    }, []);
 
     return (
         <>
-            <ProjectGrid projects={ProjectData} />
+            <BannerWithSingleText title="Welcome to my projects" />
+            { loading &&
+                <h1>Loading...</h1>
+            }
+            { projects && <ProjectGrid projects={projects} /> }
         </>
     );
 }

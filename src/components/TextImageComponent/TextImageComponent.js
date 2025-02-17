@@ -15,7 +15,7 @@ import { Stack, Box, Typography } from "@mui/material";
  * @returns A text image component horizontally split. An image on one side and text content on the other.
  */
 
-const TextImageComponent = ({ title, subtitle, text, imageSrc, imageAlt, imageOnRight = true, imageSize = "large", color="primary", buttonText = undefined, buttonHref = undefined }) => {
+const TextImageComponent = ({ title, subtitle, text, imageSrc = "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", imageAlt, imageOnRight = true, imageSize = "large", color="primary", buttonText = undefined, buttonHref = undefined }) => {
 
 
     return (
@@ -25,7 +25,9 @@ const TextImageComponent = ({ title, subtitle, text, imageSrc, imageAlt, imageOn
                 <Typography variant="h6" sx={{ mb: 1, color: "secondary.dark"}}>{subtitle}</Typography>
                 <Typography variant="body" color="primary.light">{text}</Typography>
                 {buttonHref &&
-                    <BaseButton component="a" href={buttonHref} text={buttonText} variant="outlined" color="secondary.dark" />
+                    <Box component="section" sx={{ margin: "10px 0px"}}>
+                        <BaseButton component="a" href={buttonHref} text={buttonText} variant="outlined" color="secondary.dark" />
+                    </Box>
                     }
             </Box>
             <Box component="section" className={`split-section-image-${imageSize}`}>

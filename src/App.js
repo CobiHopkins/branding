@@ -1,13 +1,22 @@
+// Importing React / Mui stuff
 import React from 'react';
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material";
+import { grey, yellow } from '@mui/material/colors';
+
+// Importing CSS
 import './App.css';
+
+// Importing Pages
 import Home from "./pages/Home/Home";
 import Projects from "./pages/Projects/Projects";
 import ProjectDetails from "./components/ProjectDetails/ProjectDetails";
 import Error from "./pages/Error/Error";
-import { grey, yellow } from '@mui/material/colors';
 
+// Import my Components
+import NavBar from './components/NavBar/NavBar';
+
+// Main theme for the application.
 const theme = createTheme({
   palette: {
     primary: grey,
@@ -32,11 +41,13 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      {/* ADD NAVBAR HERE */}
       <Router>
+        <NavBar />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
-          {/* <Route path="/projects/:id" element={<ProjectDetails />} /> */}
+          <Route path="/projects/:id" element={<ProjectDetails />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>
