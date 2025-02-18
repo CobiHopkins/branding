@@ -15,6 +15,8 @@ import Error from "./pages/Error/Error";
 
 // Import my Components
 import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
+import { ProjectProvider } from './contexts/projects';
 
 // Main theme for the application.
 const theme = createTheme({
@@ -41,16 +43,19 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <ProjectProvider>
       {/* ADD NAVBAR HERE */}
-      <Router>
-        <NavBar />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:id" element={<ProjectDetails />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </Router>
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/:id" element={<ProjectDetails />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </ProjectProvider>
     </ThemeProvider>
   )
 }

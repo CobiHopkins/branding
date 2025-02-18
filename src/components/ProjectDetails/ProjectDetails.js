@@ -1,8 +1,10 @@
-import { Stack, Box, Typography } from "@mui/material";
+import { Stack, Box, Typography, Link } from "@mui/material";
+import { FaGithub } from "react-icons/fa6";
 import { useParams, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 
 // My component imports
+import { ProjectContext } from "../../contexts/projects";
 import BaseButton from "../BaseButton/BaseButton";
 import BannerWithSingleText from '../BannerWithSingleText/BannerWithSingleText';
 import TagPill from '../TagPill/TagPill';
@@ -11,40 +13,18 @@ import TagPill from '../TagPill/TagPill';
 const ProjectDetails = ({}) => {
 
     const { id } = useParams();
-    const [ project, setProject ] = useState();
-    const [ tags, setTags ] = useState([]);
-    const [ loading, setLoading ] = useState(true);
-
     const navigate = useNavigate();
+    const { projects, loading, error } = useContext(ProjectContext);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const [projectResponse, tagResponse] = await Promise.all([ 
-                fetch(`http://localhost:3030/api/v1/projects/${id}`, { method: 'GET' }), 
-                fetch(`http://localhost:3030/api/v1/projects/${id}/tags`, { method: 'GET' })
-            ]);
-
-            if (projectResponse.status === 404) {
-                navigate('/error');
-                return;
-            }
-
-            const projectData = await projectResponse.json();
-            const tagData = await tagResponse.json();
-
-            setProject(projectData);
-            setTags(tagData);
-            setLoading(false);
-
-            return;
-        }
-
-        fetchData();
-
-    }, [id])
+    const project = projects.filter(p => p.ID === Number(id));
 
     if (loading) {
         return <h1>Loading project...</h1>
+    }
+
+    if (!loading && project.length === 0) {
+        navigate('/error');
+        return;
     }
 
 // todo: complete layout.
@@ -52,21 +32,25 @@ const ProjectDetails = ({}) => {
         <>
             <BannerWithSingleText title={project[0].title} />
 
-            <Stack component="section" direction="column" display="flex" alignItems="center">
+            <Stack component="section" direction="column" display="flex" alignItems="center" spacing={5}>
                 <Box component="header" display="flex" flexDirection="row">
-                    { tags.map((tag, index) => (
+                    {/* { tags.map((tag, index) => (
                             <TagPill
                                 key={index}
                                 name={tag.name}
                                 colour={tag.colour} />
-                    ))}
+                    ))} */}
                 </Box>
-                <Stack component="main" direction="row" display="flex">
-                    <Box variant="main">
-                        {project[0].description}
+                <Stack component="main" direction="row" display="flex" spacing={1} sx={{ minWidth: "75vw"}}>
+                    <Box variant="main" flex="0 0 75%">
+                        <Typography variant="body1" sx={{ color: "primary.light" }}>
+                            {project[0].description}
+                        </Typography>
                     </Box>
-                    <Box variant="section">
-                        
+                    <Box variant="section" display="flex" justifyContent="center" alignContent="center" flex="1">
+                        <Typography variant="xlarge" sx={{ color: "primary.light" }}>
+                            <Link href={project[0].url} underline="none" rel="noopener noreferrer" target="_blank"><FaGithub /></Link> 
+                        </Typography>  
                     </Box>
                 </Stack>
 

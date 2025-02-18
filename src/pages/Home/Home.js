@@ -1,15 +1,23 @@
-import React from 'react';
 import "./Home.css";
-import Hero from "../../components/Hero/Hero";
-import SkillCard from "../../components/SkillCard/SkillCard";
-import TextImageComponent from "../../components/TextImageComponent/TextImageComponent";
-import ThreeTierCard from '../../components/ThreeTierCard/ThreeTierCard';
-import BaseButton from "../../components/BaseButton/BaseButton";
+
+// Import third-party components, functions, etc.
+import { useContext } from 'react';
 import { Box, Typography, Stack } from "@mui/material";
 
+// Import external icons and assets.
 import { FaGitAlt, FaDatabase, FaPython, FaHtml5, FaCss3Alt, FaFigma } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io5";
 import { PiFileCSharpDuotone } from "react-icons/pi";
+
+// Import internal components, contexts, assets, and functions.
+import Hero from "../../components/Hero/Hero";
+import SkillCard from "../../components/SkillCard/SkillCard";
+import TextImageComponent from "../../components/TextImageComponent/TextImageComponent";
+import FourTierCard from '../../components/FourTierCard/FourTierCard';
+import BaseButton from "../../components/BaseButton/BaseButton";
+//import footer here...
+import { ProjectContext } from '../../contexts/projects';
+
 
 const AwardData = [
     {id: 1, title: "Highest Achieving Student", date: "2015 - 2016", description: "Mauris cursus tincidunt hendrerit. Maecenas quis augue vitae velit varius tempor vel sed mi. Suspendisse eu lorem quis enim tempor dignissim. Duis finibus justo vel dui gravida, et viverra ipsum ullamcorper. Sed et ornare elit. Fusce ultricies interdum sollicitudin. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin blandit eget urna auctor pharetra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam nunc augue, varius sed sem ac, tristique blandit velit", imageSrc: "https://images.pexels.com/photos/2098578/pexels-photo-2098578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
@@ -34,13 +42,10 @@ const SkillData = [
     {id: 8, name: "Databases", description: "SQL / NoSQL", icon: FaDatabase},
 ]
 
-const projectData = [
-    {title: "Project One", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac molestie lacus. In lobortis tincidunt libero, vel euismod magna varius eu. Suspendisse a viverra enim, non vulputate diam. Nullam ut auctor nisl. Curabitur laoreet justo eget finibus mattis. Mauris enim ex, ullamcorper vitae mauris vitae", linkHref: "/projects/project1", linkText: "Read more about Project One"},
-    {title: "Project Two", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac molestie lacus. In lobortis tincidunt libero, vel euismod magna varius eu. Suspendisse a viverra enim, non vulputate diam. Nullam ut auctor nisl. Curabitur laoreet justo eget finibus mattis. Mauris enim ex, ullamcorper vitae mauris vitae", linkHref: "/projects/project2", linkText: "Read more about Project Two"},
-    {title: "Project Three", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac molestie lacus. In lobortis tincidunt libero, vel euismod magna varius eu. Suspendisse a viverra enim, non vulputate diam. Nullam ut auctor nisl. Curabitur laoreet justo eget finibus mattis. Mauris enim ex, ullamcorper vitae mauris vitae", linkHref: "/projects/project3", linkText: "Read more about Project Three"}
-]
-
 const Home = () => {
+
+    const { projects, loading, error } = useContext(ProjectContext);
+
     return (
         <>
                 <Hero 
@@ -81,18 +86,23 @@ const Home = () => {
                 }}>
                     <Typography variant="h2" color="primary.light">Recent Projects</Typography>
                     <Stack direction="row" spacing={0} alignContent="center" justifyContent="center"  sx={{ margin: "20px 0px"}}>
-                        {
-                            projectData.map((project) => (
-                                <ThreeTierCard
+                        {loading && <Typography variant="body1" sx={{ color: 'primary.light'}}>Loading Projects...</Typography>}
+                        {projects &&
+                            projects.map((project) => (
+                                <FourTierCard
+                                    image={project.image}
                                     title={project.title}
                                     description={project.description}
-                                    footerLinkHref={project.linkHref}
-                                    footerLinkText={project.linkText}
+                                    footerLinkHref={`/projects/${project.ID}`}
+                                    footerLinkText={`Read more about ${project.title}`}
                                 />
                             ))
                         }
                     </Stack>
                     <BaseButton component="a" href="projects" variant="outlined" color="secondary.dark" text="View More" />
+                </Box>
+                <Box component="section" display="flex" flexDirection="column">
+                    
                 </Box>
         </>
     );

@@ -1,5 +1,5 @@
 import { Stack, Box, Link, Typography } from "@mui/material";
-import "./ThreeTierCard.css";
+import "./FourTierCard.css";
 
 /**
  * 
@@ -10,23 +10,24 @@ import "./ThreeTierCard.css";
  * @returns 
  */
 
-const ThreeTierCard = ({title, description, footerLinkHref, footerLinkText}) => {
+const ThreeTierCard = ({image = "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", title, description, footerLinkHref, footerLinkText}) => {
 
 
     return (
-        <Stack direction="column" spacing={4} className="threeTierContainer" justifyContent="space-around">
+        <Stack direction="column" spacing={4} className="threeTierContainer" justifyContent="space-around" sx={{ maxWidth: "400px"}}>
             <Box component="header">
-                <Typography variant="h4">
-                    {title}
-                </Typography>
+                <img src={image} alt="" style={{ width: "100%"}}/>
             </Box>
             <Box component="main">
                 <Typography variant="body1" color="primary">
+                    {title}
+                </Typography>
+                <Typography variant="body2" color="primary">
                     {description}
                 </Typography>
             </Box>
             <Box component="footer">
-                <Link href={`${footerLinkHref}`} variant="caption">
+                <Link href={`${footerLinkHref}`} variant="caption" sx={{ color: 'primary.light'}}>
                     {footerLinkText}
                 </Link>
             </Box>

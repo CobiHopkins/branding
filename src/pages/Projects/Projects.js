@@ -1,46 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
+import { ProjectContext } from '../../contexts/projects';
+import { Stack, Box, Typography } from '@mui/material';
 import ProjectGrid from "../../components/ProjectGrid/ProjectGrid";
 import BannerWithSingleText from '../../components/BannerWithSingleText/BannerWithSingleText';
 
 const Projects = () => {
 
-    const [projects, setProjects] = useState([]);
-    const [ loading, setLoading ] = useState(true);
-
-
-    useEffect(() => {
-
-        const fetchData = async () => {
-            const response = await fetch('http://localhost:3030/api/v1/projects', {
-                method: 'GET',
-                mode: 'cors'
-            });
-
-            if (!response.ok) {
-                console.log('An error occurred.');
-                return;
-            }
-
-            const data = await response.json();
-            setProjects(data);
-            setLoading(false);
-
-            return data;
-        }
-
-        fetchData();
-
-        return;
-    }, []);
+    const { projects, loading, error } = useContext(ProjectContext);
 
     return (
-        <>
+        <Stack component="section" direction="column" spacing={5} alignItems="center" sx={{ marginTop: 5}}>
             <BannerWithSingleText title="Welcome to my projects" />
-            { loading &&
-                <h1>Loading...</h1>
-            }
-            { projects && <ProjectGrid projects={projects} /> }
-        </>
+            <Box component="section">
+                { loading && 
+                <Typography variant="body1" sx={{ color: 'primary.light' }}>
+                    Loading Projects...
+                </Typography> }
+                { projects && <ProjectGrid projects={projects} /> }
+            </Box>
+        </Stack>
     );
 }
 
