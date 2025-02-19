@@ -15,9 +15,10 @@ import SkillCard from "../../components/SkillCard/SkillCard";
 import TextImageComponent from "../../components/TextImageComponent/TextImageComponent";
 import FourTierCard from '../../components/FourTierCard/FourTierCard';
 import BaseButton from "../../components/BaseButton/BaseButton";
+import AnimationFadeIn from "../../components/AnimationFadeIn/AnimationFadeIn";
+
 //import footer here...
 import { ProjectContext } from '../../contexts/projects';
-
 
 const AwardData = [
     {id: 1, title: "Highest Achieving Student", date: "2015 - 2016", description: "Mauris cursus tincidunt hendrerit. Maecenas quis augue vitae velit varius tempor vel sed mi. Suspendisse eu lorem quis enim tempor dignissim. Duis finibus justo vel dui gravida, et viverra ipsum ullamcorper. Sed et ornare elit. Fusce ultricies interdum sollicitudin. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin blandit eget urna auctor pharetra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam nunc augue, varius sed sem ac, tristique blandit velit", imageSrc: "https://images.pexels.com/photos/2098578/pexels-photo-2098578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
@@ -44,7 +45,7 @@ const SkillData = [
 
 const Home = () => {
 
-    const { projects, loading, error } = useContext(ProjectContext);
+    const { projects, loading } = useContext(ProjectContext);
 
     return (
         <>
@@ -55,51 +56,58 @@ const Home = () => {
                 />
                 <Box component="section" className="skills">
 
-                    <Typography variant="h2" sx={{ mb: 2, color: "primary.light" }}>Skills</Typography>
+                    <Typography variant="h2" sx={{ mb: 2, color: "primary.light", textAlign: 'center' }}>Skills</Typography>
                     <Box component="main" className="skill-container">
-                        {SkillData.map((skill) => (
+                        {SkillData.map((skill, index) => (
+                            <AnimationFadeIn delay={index * 0.25}>
                             <SkillCard 
                                 key={skill.id}
                                 title={skill.name}
                                 description={skill.description}
                                 icon={skill.icon}
                             />
+                            </AnimationFadeIn>
                         ))}
                     </Box>
                 </Box>
                 <Box component="section" className="text-image-container">
-                    {AwardData.map((award) => (
-                        <TextImageComponent
-                            key={award.id}
-                            title={award.title}
-                            subtitle={award.date}
-                            text={award.description}
-                            imageSrc={award.imageSrc}
-                            imageAlt="Pexels image"
-                            imageOnRight={award.id % 2 === 0 ? false : true}
-                            imageSize="large"
-                        />
+                    {AwardData.map((award, index) => (
+                        <AnimationFadeIn delay={1.5}>
+                            <TextImageComponent
+                                key={award.id}
+                                title={award.title}
+                                subtitle={award.date}
+                                text={award.description}
+                                imageSrc={award.imageSrc}
+                                imageAlt="Pexels image"
+                                imageOnRight={award.id % 2 === 0 ? false : true}
+                                imageSize="large"
+                            />
+                        </AnimationFadeIn>
                     ))}
                 </Box>
                 <Box component="section" display="flex" flexDirection="column" alignItems="center" sx={{
                     margin: "40px 0px"
                 }}>
-                    <Typography variant="h2" color="primary.light">Recent Projects</Typography>
-                    <Stack direction="row" spacing={0} alignContent="center" justifyContent="center"  sx={{ margin: "20px 0px"}}>
+                    <Typography variant="h2" color="primary.light" sx={{ textAlign: 'center' }}>Recent Projects</Typography>
+                    <Stack direction="row" spacing={0} alignContent="center" justifyContent="center" flexWrap="wrap" sx={{ margin: "20px 0px"}}>
                         {loading && <Typography variant="body1" sx={{ color: 'primary.light'}}>Loading Projects...</Typography>}
                         {projects &&
-                            projects.map((project) => (
+                            projects.map((project, index) => (
+                                <AnimationFadeIn delay={index}>
                                 <FourTierCard
+                                    key={project.ID}
                                     image={project.image}
                                     title={project.title}
                                     description={project.description}
                                     footerLinkHref={`/projects/${project.ID}`}
                                     footerLinkText={`Read more about ${project.title}`}
                                 />
+                                </AnimationFadeIn>
                             ))
                         }
                     </Stack>
-                    <BaseButton component="a" href="projects" variant="outlined" color="secondary.dark" text="View More" />
+                    <BaseButton component="a" href="projects" variant="outlined" color="secondary" text="View More" />
                 </Box>
                 <Box component="section" display="flex" flexDirection="column">
                     

@@ -18,7 +18,7 @@ const BannerWithSingleText = ({title}) => {
                 backgroundPosition: 'center',
                 margin: "20px auto"
             }}>
-                <Typography variant="h3" color="primary.light">
+                <Typography variant="h3" color="primary.light" sx={{ textAlign: 'center' }}>
                     {title}
                 </Typography>
             </Box>
