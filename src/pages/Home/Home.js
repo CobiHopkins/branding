@@ -16,6 +16,7 @@ import TextImageComponent from "../../components/TextImageComponent/TextImageCom
 import FourTierCard from '../../components/FourTierCard/FourTierCard';
 import BaseButton from "../../components/BaseButton/BaseButton";
 import AnimationFadeIn from "../../components/AnimationFadeIn/AnimationFadeIn";
+import AnimatedLoadingBalls from "../../components/AnimatedLoadingBalls/AnimatedLoadingBalls";
 
 //import footer here...
 import { ProjectContext } from '../../contexts/projects';
@@ -91,7 +92,11 @@ const Home = () => {
                 }}>
                     <Typography variant="h2" color="primary.light" sx={{ textAlign: 'center' }}>Recent Projects</Typography>
                     <Stack direction="row" spacing={0} alignContent="center" justifyContent="center" flexWrap="wrap" sx={{ margin: "20px 0px"}}>
-                        {loading && <Typography variant="body1" sx={{ color: 'primary.light'}}>Loading Projects...</Typography>}
+                    { loading && 
+                    <Stack direction="column" alignContent="center" justifyContent="center" sx={{ textAlign: 'center' }}>
+                        <Typography variant="h5" color="primary">Loading Projects...</Typography>
+                        <AnimatedLoadingBalls pxSize={20} />
+                    </Stack> }
                         {projects &&
                             projects.map((project, index) => (
                                 <AnimationFadeIn delay={index}>
@@ -108,9 +113,6 @@ const Home = () => {
                         }
                     </Stack>
                     <BaseButton component="a" href="projects" variant="outlined" color="secondary" text="View More" />
-                </Box>
-                <Box component="section" display="flex" flexDirection="column">
-                    
                 </Box>
         </>
     );

@@ -5,7 +5,6 @@
 .animateFadeIn {
     opacity: 1;
     animation: AnimationFadeIn var(--transition-delay) ease-in forwards;
-    /* animation-delay: var(--transition-delay); */
 }
 
 @keyframes AnimationFadeIn {
