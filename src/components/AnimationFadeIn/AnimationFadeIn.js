@@ -14,6 +14,7 @@ const AnimationFadeIn = ({ children, delay }) => {
     const elemRef = useRef(null);
 
     useEffect(() => {
+        const curr = elemRef.current;
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting && !hasAnimated) {
@@ -26,13 +27,13 @@ const AnimationFadeIn = ({ children, delay }) => {
             }
         );
 
-        if (elemRef.current) {
-            observer.observe(elemRef.current);
+        if (curr) {
+            observer.observe(curr);
         }
 
         return () => {
-            if (elemRef.current) {
-                observer.unobserve(elemRef.current);
+            if (curr) {
+                observer.unobserve(curr);
             }
         }
 
