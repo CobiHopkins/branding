@@ -13,7 +13,7 @@ import { Stack, Typography } from "@mui/material";
  * 
  */
 
-function Hero({avatar, avatarAltText, title = null, description, allowDescriptionAnimation = true}) {
+function Hero({avatar, avatarAltText, title = null, description, allowDescriptionAnimation = true, buttonHref}) {
     
     const AnimatedText = (
         <AnimatedTextFading 
@@ -37,7 +37,7 @@ function Hero({avatar, avatarAltText, title = null, description, allowDescriptio
                     color: "primary.light"
                 }}>
                     {allowDescriptionAnimation ? AnimatedText : StaticText}
-                    <BaseButton component="a" href="mailto:email@emample.com" variant="outlined" submittable={false} disabled={false} color="secondary" text="Contact Me" />
+                    <BaseButton component="a" href={buttonHref} variant="outlined" submittable={false} disabled={false} color="secondary" text="Contact Me" />
                 </Stack>
         </Stack>
     );

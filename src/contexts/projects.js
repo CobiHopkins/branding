@@ -10,7 +10,7 @@ export const ProjectProvider = ({ children }) => {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const response = await fetch('http://localhost:3030/api/v1/projects', { method: 'GET' });
+                const response = await fetch(`${process.env.REACT_APP_BASE_API_URI}/projects`, { method: 'GET' });
 
                 if (!response.ok) {
                     throw new Error('Failed to fetch projects');
