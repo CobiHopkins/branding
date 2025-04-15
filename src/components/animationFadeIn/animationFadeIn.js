@@ -41,7 +41,7 @@ const AnimationFadeIn = ({ children, delay }) => {
 
 
     return (
-        <section ref={elemRef} className={`${inView ? 'animationFadeIn' : 'outOfView'}`} style={style}>
+        <section ref={elemRef} className={`${inView ? 'animateFadeIn' : 'outOfView'}`} style={style}>
             { children }
         </section>
     )
