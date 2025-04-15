@@ -1,0 +1,17 @@
+.outOfView {
+    opacity: 0;
+}
+
+.animateFadeIn {
+    opacity: 1;
+    animation: AnimationFadeIn var(--transition-delay) ease-in forwards;
+}
+
+@keyframes AnimationFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
