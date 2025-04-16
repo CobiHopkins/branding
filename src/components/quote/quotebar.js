@@ -5,7 +5,8 @@ import './quotebar.css';
 const quotes = [
     {quote: "The good thing about science is that it's true whether or not you believe in it.", author: "Neil deGrasse Tyson"},
     {quote: "Sometimes it's the people no one imagines anything of who do the things that no one can imagine", author: "The Imitation Game"},
-    {quote: "Every cloud has its silver lining, but it is sometimes difficult to get it to the mint.", author: "Don Marquis"}
+    {quote: "Every cloud has its silver lining, but it is sometimes difficult to get it to the mint.", author: "Don Marquis"},
+    {quote: "Don't underestimate me because I'm quiet. I know more than I say, think more than I speak and observe more than you know.", author: "Michaela Chung"}
 ];
 
 
@@ -27,7 +28,7 @@ function QuoteBar(props) {
         return () => {
             clearInterval(quoteInterval);
         }
-    });
+    }, []);
 
 
     /* ToDo:
