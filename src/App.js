@@ -1,16 +1,11 @@
 import React from 'react';
 import { Layout } from 'antd';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from 'react-router-dom';
 import './App.css';
 
 import Nav from './components/navigation/nav';
-import Home from './components/home/home';
+import Home from './pages/Home/Home';
 
-const { Header, Content } = Layout;
+const { Header } = Layout;
 
 function App() {
   return (
