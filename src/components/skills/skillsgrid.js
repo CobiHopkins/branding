@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react';
+// import React, {useRef, useEffect} from 'react';
 import { Row, Col } from 'antd';
 import SkillsCard from './skillcard';
 import AnimationFadeIn from '../animationFadeIn/animationFadeIn';
@@ -29,9 +29,10 @@ function SkillsGrid() {
                     {skillData.map((skill, index) => {
                         
                         return (
-                                <AnimationFadeIn delay={index * 0.25}>
-                                    <Col style={{ minHeight: 380 }}>
+                                <AnimationFadeIn delay={index * 0.25} key={index}>
+                                    <Col style={{ minHeight: 380 }} key={index}>
                                     <SkillsCard
+                                        key={index}
                                         id={skill.id}
                                         title={skill.title}
                                         desc={skill.desc} />

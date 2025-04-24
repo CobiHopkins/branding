@@ -1,5 +1,4 @@
 import React from 'react';
-import { Divider } from 'antd';
 
 import {
     GithubOutlined,
@@ -33,7 +32,6 @@ const SocialLinks = ({links}) => {
         <div className="social-links">
             {links.map(({platform, url}, index) => {
                 return (
-                    <>
                 <a 
                     className="socialLink"
                     key={index}
@@ -44,7 +42,6 @@ const SocialLinks = ({links}) => {
                     >
                         {renderIcons(platform)}
                 </a>
-                </>
                 )
             })}
         </div>
