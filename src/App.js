@@ -5,7 +5,7 @@ import './App.css';
 import Nav from './components/navigation/nav';
 import Home from './pages/Home/Home';
 
-const { Header, Content } = Layout;
+const { Header } = Layout;
 
 function App() {
   return (
