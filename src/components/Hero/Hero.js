@@ -29,7 +29,7 @@ function Hero() {
                             }} src={logo} alt="A computer generated image of Cobi Hopkins"/>
                     </Row>
                     <Col style={{alignContent: "center", margin: "0px 40px"}}>
-                    <Row className="header-text" type='flex' justify='center'>
+                    <Row className="header-text" type='flex' justify='center' style={{ position: "relative", zIndex: "999999999"}}>
                         <h1>Cobi Hopkins</h1>
                     </Row>
                     <Row className="header-text" type='flex' justify='center'>
