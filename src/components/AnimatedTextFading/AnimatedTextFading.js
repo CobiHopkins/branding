@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react";
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import "./AnimatedTextFading.css";
 /**
  * 
