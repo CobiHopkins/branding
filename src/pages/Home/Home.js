@@ -98,7 +98,7 @@ const Home = () => {
                         <AnimatedLoadingBalls pxSize={20} />
                     </Stack> }
                         {projects &&
-                            projects.map((project, index) => (
+                            projects.slice(0, 3).map((project, index) => (
                                 <AnimationFadeIn delay={index}>
                                 <FourTierCard
                                     key={project.ID}
