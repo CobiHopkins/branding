@@ -17,6 +17,8 @@ import { Button } from "@mui/material";
 
 const BaseButton = ({href = undefined, component = "button", text, className, submittable=false, disabled=false, onClick, variant = "outlined", color="primary"}) => {
 
+    if (!text) return null; 
+    
     return (
         <Button href={href} component={component} variant={variant} className={className} onClick={onClick} type={submittable ? "submit" : "button"} disabled={disabled} color={color} sx={{color: color}}>
             {text}

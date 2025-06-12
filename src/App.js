@@ -1,11 +1,10 @@
-// Importing React / Mui stuff
-import React from 'react';
+
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { grey, yellow } from '@mui/material/colors';
 
-// Importing CSS
 import './App.css';
+
 
 // Importing Pages
 import Home from "./pages/Home/Home";

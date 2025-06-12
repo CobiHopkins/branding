@@ -13,18 +13,17 @@ import { PiFileCSharpDuotone } from "react-icons/pi";
 import Hero from "../../components/Hero/Hero";
 import SkillCard from "../../components/SkillCard/SkillCard";
 import TextImageComponent from "../../components/TextImageComponent/TextImageComponent";
-import FourTierCard from '../../components/FourTierCard/FourTierCard';
+import ThreeTierCard from '../../components/ThreeTierCard/ThreeTierCard';
 import BaseButton from "../../components/BaseButton/BaseButton";
 import AnimationFadeIn from "../../components/AnimationFadeIn/AnimationFadeIn";
 import AnimatedLoadingBalls from "../../components/AnimatedLoadingBalls/AnimatedLoadingBalls";
 
-//import footer here...
 import { ProjectContext } from '../../contexts/projects';
 
 const AwardData = [
-    {id: 1, title: "Highest Achieving Student", date: "2015 - 2016", description: "Achieved the Highest Achieving Student Award in a Level 2 IT course with a grade of Distinction*. Throughout the course, I studied a wide range of hardware and software modules, gaining a comprehensive understanding of both the theoretical and practical aspects of IT. This included in-depth learning about computer components, system architecture, and troubleshooting techniques. My ability to excel across these varied topics not only highlights my technical skills but also my commitment to mastering complex concepts, positioning me for continued success in the IT field.", imageSrc: "/assets/pexels-enginakyurt-2098578.jpg"},
-    {id: 2, title: "Student of the Year", date: "2017-2018", description: "I was honored to receive the Student of the Year award, a recognition of my dedication, excellence in academics, and contributions to the learning environment. Throughout my studies, I focused on key areas such as computer systems, networking, mathematics for IT, and web/games development, consistently achieving high grades across all subjects. In addition to my academic success, I was recognized for my support of peers, always offering help and guidance when needed, and striving to create a collaborative, positive learning atmosphere. My willingness to go above and beyond what was required was instrumental in earning this prestigious award, reflecting my passion for IT and commitment to both personal and community growth.", imageSrc: "/assets/pexels-ds-stories-7267576.jpg"},
-    {id: 3, title: "Outstanding Achievement", date: "2016-2018", description: "I was proud to receive the \"Outstanding Achievement\" award for my exceptional performance in the BTEC Level 3 course, where I achieved D*D*D, the equivalent of A*A*A at A-Levels. In addition to the 18 modules required for the course, I took the initiative to study an extra module purely out of personal interest, demonstrating my passion for IT and my eagerness to learn beyond the curriculum. Throughout the course, I consistently ranked at the top of the class, tackling complex problems and, on occasion, pushing beyond the boundaries of support that my lecturers could offer. This award reflects not only my academic excellence but also my dedication to pushing the boundaries of my knowledge and skills.", imageSrc: "/assets/pexels-n-voitkevich-6532374.jpg"}
+    {id: 1, title: "Highest Achieving Student", date: "2015 - 2016", description: "Achieved the Highest Achieving Student Award in a Level 2 IT course with a grade of Distinction*. Throughout the course, I studied a wide range of hardware and software modules, gaining a comprehensive understanding of both the theoretical and practical aspects of IT. This included in-depth learning about computer components, system architecture, and troubleshooting techniques. My ability to excel across these varied topics not only highlights my technical skills but also my commitment to mastering complex concepts, positioning me for continued success in the IT field.", imageSrc: "/assets/pexels-enginakyurt-2098578.jpg", imageAlt: "Blue and Yellow smokey environment with a golden trophy of a person in the center. (Image from Pexels)"},
+    {id: 2, title: "Student of the Year", date: "2017-2018", description: "I was honored to receive the Student of the Year award, a recognition of my dedication, excellence in academics, and contributions to the learning environment. Throughout my studies, I focused on key areas such as computer systems, networking, mathematics for IT, and web/games development, consistently achieving high grades across all subjects. In addition to my academic success, I was recognized for my support of peers, always offering help and guidance when needed, and striving to create a collaborative, positive learning atmosphere. My willingness to go above and beyond what was required was instrumental in earning this prestigious award, reflecting my passion for IT and commitment to both personal and community growth.", imageSrc: "/assets/pexels-ds-stories-7267576.jpg", imageAlt: "A light blue background with a square block in the center with a coin-like trophy on top with the number 1 in the center ring. (Image from Pexels)"},
+    {id: 3, title: "Outstanding Achievement", date: "2016-2018", description: "I was proud to receive the \"Outstanding Achievement\" award for my exceptional performance in the BTEC Level 3 course, where I achieved D*D*D, the equivalent of A*A*A at A-Levels. In addition to the 18 modules required for the course, I took the initiative to study an extra module purely out of personal interest, demonstrating my passion for IT and my eagerness to learn beyond the curriculum. Throughout the course, I consistently ranked at the top of the class, tackling complex problems and, on occasion, pushing beyond the boundaries of support that my lecturers could offer. This award reflects not only my academic excellence but also my dedication to pushing the boundaries of my knowledge and skills.", imageSrc: "/assets/pexels-n-voitkevich-6532374.jpg", imageAlt: "A yellow background with sparkly circles and two tilted trophies laying down. (Image from Pexels)"}
 ]
 
 const HeroDescriptions = [
@@ -80,7 +79,7 @@ const Home = () => {
                                 subtitle={award.date}
                                 text={award.description}
                                 imageSrc={award.imageSrc}
-                                imageAlt="Pexels image"
+                                imageAlt={award.imageAlt}
                                 imageOnRight={award.id % 2 === 0 ? false : true}
                                 imageSize="large"
                             />
@@ -100,7 +99,7 @@ const Home = () => {
                         {projects &&
                             projects.slice(0, 3).map((project, index) => (
                                 <AnimationFadeIn delay={index}>
-                                <FourTierCard
+                                <ThreeTierCard
                                     key={project.ID}
                                     image={project.image}
                                     title={project.title}

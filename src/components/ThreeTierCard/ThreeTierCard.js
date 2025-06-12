@@ -1,5 +1,5 @@
 import { Stack, Box, Link, Typography } from "@mui/material";
-import "./FourTierCard.css";
+import "./ThreeTierCard.css";
 
 /**
  * 
