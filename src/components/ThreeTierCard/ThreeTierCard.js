@@ -10,7 +10,7 @@ import "./ThreeTierCard.css";
  * @returns 
  */
 
-const ThreeTierCard = ({image = "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", title, description, footerLinkHref, footerLinkText}) => {
+const ThreeTierCard = ({image = "/assets/laptop_coding_pexels.png", title, description, footerLinkHref, footerLinkText}) => {
 
 
     return (

@@ -33,14 +33,14 @@ const HeroDescriptions = [
 ]
 
 const SkillData = [
-    {id: 1, name: "Git", description: "Version Control", icon: FaGitAlt},
-    {id: 2, name: "JavaScript", description: "Vanilla, React", icon: IoLogoJavascript},
-    {id: 3, name: "Python", description: "Scikit-Learn, NumPy, Pandas", icon: FaPython},
-    {id: 4, name: "C#", description: ".NET MAUI", icon: PiFileCSharpDuotone},
-    {id: 5, name: "HTML5", description: "Front-End Development", icon: FaHtml5},
-    {id: 6, name: "CSS3", description: "SCSS, Bootstrap, Tailwind", icon: FaCss3Alt},
-    {id: 7, name: "Figma", description: "UI Design", icon: FaFigma},
-    {id: 8, name: "Databases", description: "SQL / NoSQL", icon: FaDatabase},
+    {id: 1, name: "Git", description: "Version Control", icon: FaGitAlt, iconAltText: "Version control tool: Git"},
+    {id: 2, name: "JavaScript", description: "Vanilla, React", icon: IoLogoJavascript, iconAltText: "Programming language: JavaScript"},
+    {id: 3, name: "Python", description: "Scikit-Learn, NumPy, Pandas", icon: FaPython, iconAltText: "Programming language: Python"},
+    {id: 4, name: "C#", description: ".NET MAUI", icon: PiFileCSharpDuotone, iconAltText: "Programming language: C sharp"},
+    {id: 5, name: "HTML5", description: "Front-End Development", icon: FaHtml5, iconAltText: "Markup language: HTML5"},
+    {id: 6, name: "CSS3", description: "SCSS, Bootstrap, Tailwind", icon: FaCss3Alt, iconAltText: "Style language: CSS3"},
+    {id: 7, name: "Figma", description: "UI Design", icon: FaFigma, iconAltText: "Design tool: Figma"},
+    {id: 8, name: "Databases", description: "SQL / NoSQL", icon: FaDatabase, iconAltText: "Database technology"},
 ]
 
 const Home = () => {
@@ -59,12 +59,13 @@ const Home = () => {
                     <Typography variant="h2" sx={{ mb: 2, color: "primary.light", textAlign: 'center' }}>Skills</Typography>
                     <Box component="main" className="skill-container">
                         {SkillData.map((skill, index) => (
-                            <AnimationFadeIn delay={index * 0.25}>
+                            <AnimationFadeIn key={`animation-skill-${skill.name}`} delay={index * 0.25}>
                             <SkillCard 
-                                key={skill.id}
+                                key={`skill-${skill.id}`}
                                 title={skill.name}
                                 description={skill.description}
                                 icon={skill.icon}
+                                iconAltText={skill.iconAltText}
                             />
                             </AnimationFadeIn>
                         ))}
@@ -72,9 +73,9 @@ const Home = () => {
                 </Box>
                 <Box component="section" className="text-image-container">
                     {AwardData.map((award, index) => (
-                        <AnimationFadeIn delay={1.5}>
+                        <AnimationFadeIn key={`animation-awards-${award.title}`} delay={1.5}>
                             <TextImageComponent
-                                key={award.id}
+                                key={`award-${award.id}`}
                                 title={award.title}
                                 subtitle={award.date}
                                 text={award.description}
@@ -98,9 +99,9 @@ const Home = () => {
                     </Stack> }
                         {projects &&
                             projects.slice(0, 3).map((project, index) => (
-                                <AnimationFadeIn delay={index}>
+                                <AnimationFadeIn key={`animation-project-${project.title}`} delay={index}>
                                 <ThreeTierCard
-                                    key={project.ID}
+                                    key={`project-${project.ID}`}
                                     image={project.image}
                                     title={project.title}
                                     description={project.description}

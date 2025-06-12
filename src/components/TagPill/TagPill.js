@@ -5,7 +5,7 @@ const TagPill = ({name, colour}) => {
 
     return (
         <>
-            <Box component="section" display="flex" className="tag-pill" sx={{ backgroundColor: `#${colour}45` }}>
+            <Box aria-label={`Category: ${name}`} component="section" display="flex" className="tag-pill" sx={{ backgroundColor: `#${colour}45` }}>
                 <Typography component="p" variant="body2" sx={{ color: 'primary.light' }}>
                     {name}
                 </Typography>

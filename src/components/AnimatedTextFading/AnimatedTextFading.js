@@ -28,7 +28,7 @@ const AnimatedTextFading = ({animationDelay = 5000, items, variant="h1", classNa
     }, []);
 
     return (
-        <Typography variant={variant} className={`${className} ${isVisible ? 'visible' : 'hidden'}`}>
+        <Typography aria-live="polite" aria-atomic="true" variant={variant} className={`${className} ${isVisible ? 'visible' : 'hidden'}`}>
             {items[currentItemIndex]}
         </Typography>
     );
