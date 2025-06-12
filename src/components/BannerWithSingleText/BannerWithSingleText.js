@@ -5,7 +5,7 @@ const BannerWithSingleText = ({title = ''}) => {
 
     return (
         <>
-            <Box component="section" sx={{
+            <Box component="section" aria-label="Banner" sx={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',

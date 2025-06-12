@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import BannerWithSingleText from "../components/BannerWithSingleText/BannerWithSingleText";
 
 /**
- * ✅ BannerWithSingleText Test Checklist
+ * Test Checklist for BannerWithSingleText
  *
  * Rendering & Structure
  * [x] Renders without issues
@@ -11,22 +11,23 @@ import BannerWithSingleText from "../components/BannerWithSingleText/BannerWithS
  * [x] Does not crash when `title` is an empty string
 
  * Accessibility
- * [ ] Section contains a heading (for implicit `region` role)
- * [ ] Heading is accessible via `getByRole('heading', { level: 3 })`
- * [ ] Heading has correct text content
+ * [x] Section contains a heading.
+ * [x] Heading is accessible via `getByRole('heading', { level: 3 })`
+ * [x] Heading has correct text content
+ * [x] Renders component with correct aria-label
 
- * Styling (Optional if unit testing, useful for visual regression)
- * [ ] Applies background image style
- * [ ] Has correct inline styles for height, width, and alignment (e.g., flexbox)
+ * Styling
+ * [x] Applies background image style
+ * [x] Has correct styles for height, width, and display (e.g., flexbox)
 
  * Snapshot
- * [ ] Matches snapshot with a non-empty `title`
- * [ ] Matches snapshot with an empty `title`
+ * [x] Matches snapshot with a non-empty `title`
+ * [x] Matches snapshot with an empty `title`
  */
 
 describe(BannerWithSingleText, () => {
     it('Renders without issues', () => {
-        render(<BannerWithSingleText title="Hello World" />);
+        const banner = render(<BannerWithSingleText title="Hello World" />);
     });
 
     it('Creates a banner with a single text component', () => {
@@ -38,24 +39,72 @@ describe(BannerWithSingleText, () => {
         render(<BannerWithSingleText title="Title check" />);
         const banner = screen.getByText("Title check");
         expect(banner).toHaveClass('MuiTypography-h3');
-    })
+    });
 
     it('Does not crash when `title` is an empty string', () => {
         render(<BannerWithSingleText title="" />);
         const heading = screen.getByRole('heading', { level: 3 });
         expect(heading).toBeInTheDocument();
         expect(heading).toBeEmptyDOMElement();
-});
+    });
 
     it('Has the correct styling', () => {
         render(<BannerWithSingleText title="Styled Banner" />);
         const parent = screen.getByText("Styled Banner").parentElement;
         expect(parent).toHaveStyle('display: flex');
         expect(parent).toHaveStyle('height: 300px');
+    });
+    
+    it("Heading is accessible via `getByRole('heading', { level: 3 })`", () => {
+        render(<BannerWithSingleText title="Test Heading" />);
+        const banner = screen.getByRole("heading", { level: 3 });
+        expect(banner).toBeInTheDocument();
+    });
+
+    it("Heading has correct text content", () => {
+        render(<BannerWithSingleText title="Test Heading" />);
+        const banner = screen.getByRole("heading", { level: 3 });
+        expect(banner).toHaveTextContent("Test Heading");
+    });
+
+    it('Renders component with correct aria-label', () => {
+        render(<BannerWithSingleText title="Checking Aria" />);
+        const banner = screen.getByRole("region");
+
+        expect(banner).toHaveAttribute('aria-label', 'Banner');
     })
 
-    it('Matches snapshot', () => {
+    it('Applies the background-image styling', () => {
+        render(<BannerWithSingleText title="Styled Banner" />);
+
+        const banner = screen.getByRole("region");
+        expect(banner).toBeInTheDocument();
+
+        const computedStyle = window.getComputedStyle(banner);
+        expect(computedStyle.backgroundImage).toMatch(/url\(/);
+        expect(computedStyle.backgroundRepeat).toBe('no-repeat');
+        expect(computedStyle.backgroundPosition).toBe('center');
+    });
+
+    it('Has correct styles for height, width, and display', () => {
+        render(<BannerWithSingleText title="Styled Banner" />);
+
+        const banner = screen.getByRole("region");
+        expect(banner).toBeInTheDocument();
+
+        const computedStyle = window.getComputedStyle(banner);
+        expect(computedStyle.height).toBe("300px");
+        expect(computedStyle.width).toBe('75vw');
+        expect(computedStyle.display).toBe('flex');
+    });
+
+    it('Matches snapshot with non-empty title', () => {
         const { container } = render(<BannerWithSingleText title="Snapshot test" />);
+        expect(container).toMatchSnapshot();
+    });
+
+    it('Matches snapshot with an empty title', () => {
+        const { container } = render(<BannerWithSingleText />);
         expect(container).toMatchSnapshot();
     })
 });

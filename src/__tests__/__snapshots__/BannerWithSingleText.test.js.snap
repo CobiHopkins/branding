@@ -1,9 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BannerWithSingleText Matches snapshot 1`] = `
+exports[`BannerWithSingleText Matches snapshot with an empty title 1`] = `
 <div>
   <section
-    class="MuiBox-root css-icw4o5"
+    aria-label="Banner"
+    class="MuiBox-root css-e22pyu"
+  >
+    <h3
+      class="MuiTypography-root MuiTypography-h3 css-ym28df-MuiTypography-root"
+    />
+  </section>
+</div>
+`;
+
+exports[`BannerWithSingleText Matches snapshot with non-empty title 1`] = `
+<div>
+  <section
+    aria-label="Banner"
+    class="MuiBox-root css-e22pyu"
   >
     <h3
       class="MuiTypography-root MuiTypography-h3 css-ym28df-MuiTypography-root"
