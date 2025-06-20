@@ -1,5 +1,6 @@
-import "./animationFadeIn.css";
-import { useRef, useEffect, useState } from 'react';
+import './AnimationFadeIn.css';
+import { useState, useEffect, useRef } from 'react';
+import { Box } from '@mui/material';
 
 const AnimationFadeIn = ({ children, delay }) => {
 
@@ -7,18 +8,17 @@ const AnimationFadeIn = ({ children, delay }) => {
         '--transition-delay': `${delay}s`
     }
 
-    const [inView, setInView] = useState(false);
     const [hasAnimated, setHasAnimated] = useState(false);
+    const [inView, setInView] = useState(false);
 
     const elemRef = useRef(null);
 
     useEffect(() => {
-
         const curr = elemRef.current;
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting && !hasAnimated) {
-                    setHasAnimated(true)
+                    setHasAnimated(true);
                     setInView(true)
                 }
             },
@@ -37,13 +37,12 @@ const AnimationFadeIn = ({ children, delay }) => {
             }
         }
 
-    }, [ hasAnimated ])
-
+    }, [hasAnimated])
 
     return (
-        <section ref={elemRef} className={`${inView ? 'animateFadeIn' : 'outOfView'}`} style={style}>
+        <Box ref={elemRef} component="section" className={`${inView ? 'animateFadeIn' : 'outOfView'}`} style={style}>
             { children }
-        </section>
+        </Box>
     )
 }
 
