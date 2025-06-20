@@ -1,0 +1,27 @@
+.loading-ball {
+    background: gold;
+    border-radius: 50%;
+    animation: bounce 1s infinite alternate;
+    position: relative;
+}
+
+.ball-one {
+    animation-delay: 0s;
+}
+
+.ball-two {
+    animation-delay: 0.15s
+}
+
+.ball-three {
+    animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-25px);
+    }
+}
