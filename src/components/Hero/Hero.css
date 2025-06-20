@@ -1,99 +1,17 @@
-.hero-container {
-    flex-direction: row;
-    z-index: 99999;
+.hero {
+    display: flex;
+    flex-direction: column;
+    height: clamp(540px, 100dvh, 100vh);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), #1E1E1E), url("../../assets/unsplash_laptop.jpg");
+    background-repeat: no-repeat;
+    background-size: auto, cover;
+    background-position: top center;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero-image {
-    display: block;
-    align-self: center;
-    margin: 0px 40px;
-}
-
-#heroImg {
-    animation: slide-in-from-left 1s;
-} 
-
-.header-text {
-    animation: slide-in-from-right 1s;
-}
-
-.header-text h1 {
-    font-size: 60px;
-    font-weight: 800;
-    margin: 0px;
-}
-
-.header-text h3 {
-    font-size: 20px;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: #F33A6A;
-    text-align: center;
-}
-
-.bg-wave {
-    display: block;
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    width: 100%;
-    height: auto;
-    line-height: 0;
-    overflow: hidden;
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 100;
-    }
-}
-
-@keyframes slide-in-from-left {
-    from {
-        transform: translateX(-500px);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slide-in-from-right {
-    from {
-        transform: translateX(500px);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-/* MEDIA QUERIES */
-@media only screen and (max-width: 675px) {
-    .hero-container {
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .hero-image {
-        margin: 20px 0px;
-    }
-
-    .header-text h1 {
-        font-size: 40px;
-    }
-
-    .header-text h3 {
-        font-size: 18px;
-    }
-
-    .bg-wave {
-        display: none;
-    }
+.hero h1 {
+    color: white;
+    font-size: 48px;
+    margin: 0;
 }

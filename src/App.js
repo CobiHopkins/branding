@@ -1,21 +1,17 @@
 import React from 'react';
-import { Layout } from 'antd';
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import './App.css';
-
-import Nav from './components/navigation/nav';
-import Home from './pages/Home/Home';
-
-const { Header } = Layout;
+import Home from "./pages/Home/Home";
+import Error from "./pages/Error/Error";
 
 function App() {
   return (
-    <>
-      <Header style={{ backgroundColor: '#20242D', padding: 0}}>
-        <Nav />
-      </Header>
-
-      <Home />
-    </>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+    </Router>
   )
 }
 

@@ -1,0 +1,23 @@
+.skills {
+    padding: 40px 10px;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+.about-main {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.skill-container {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.text-image-container {
+    background: linear-gradient(#1E1E1E, #242424);
+    padding: "0px 20px";
+}

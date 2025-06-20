@@ -1,50 +1,98 @@
-
-
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 2em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fh-container {
+  height: 100vh;
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #20242D;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.skills-list {
+.centered-flex {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-bottom: 60;
-  flex-wrap: 1;
-  max-width: 1050px;
-  opacity: 1;
+  align-items: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 0;
+  margin: 20px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.award-container {
+  background-color: #000000;
+}
+
+.padding-20 {
+  padding: 20px;
+}
+
+/*************************/
+/* Border Radius Classes */
+/*************************/
+.border-brl100 {
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.border-br150 {
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+}
+
+/*******************************/
+/*  Background Colour Classes  */
+/*******************************/
+.bg-black {
+  background-color: #000000;
+}
+
+.bg-darkgray {
+  background-color: #1E1E1E;
+}
+
+.bg-gold {
+  background-color: #9B812A;
+}
+
+.bg-24 {
+  background-color: #242424;
+}
+/*******************************/
+/* Background Gradient Classes */
+/*******************************/
+.bg-gradient-ltb {
+  background: linear-gradient(to bottom, #1E1E1E 15%, #000000 100%);
+}
+
+.bg-gradient-ltb-alt {
+  background: linear-gradient(to bottom, #000000 15%, #1E1E1E 100%);
+}
+
+/**********************/
+/* Text Color Classes */
+/**********************/
+.txt-white {
+  color: #FFFFFF;
+}
+
+.txt-gold {
+  color: #9B812A;
+}
+/***********************/
+/* Text Weight Classes */
+/***********************/
+.txt-wlight {
+  font-weight: 300;
 }

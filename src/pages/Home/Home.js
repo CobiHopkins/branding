@@ -1,76 +1,81 @@
 import React from 'react';
-import { Row } from 'antd';
+import { Divider } from "@mui/material";
+import "./Home.css";
+import Hero from "../../components/Hero/Hero";
+import SkillCard from "../../components/SkillCard/SkillCard";
+import TextImageComponent from "../../components/TextImageComponent/TextImageComponent";
 
-// component imports
-import Hero from '../../components/Hero/Hero';
-import SkillsGrid from '../../components/skills/skillsgrid';
-import QuoteBar from '../../components/quote/quotebar';
-import ProjectCard from '../../components/projects/projectcard';
-// import ScrollingBanner from '../../components/ScrollingBanner/ScrollingBanner';
+import { FaGitAlt, FaDatabase, FaPython, FaHtml5, FaCss3Alt, FaFigma } from "react-icons/fa6";
+import { IoLogoJavascript } from "react-icons/io5";
+import { PiFileCSharpDuotone } from "react-icons/pi";
 
-import hockeyVideo from '../../assets/videos/hockey_stop_video.mp4';
-import GraduationImage from '../../assets/me_graduation_july2024.jpg';
-import AnimationFadeIn from '../../components/animationFadeIn/animationFadeIn';
+import Grading from "../../assets/undraw_grading.svg";
+import Graduation from "../../assets/undraw_graduation.svg";
 
-import './home.css';
+const AwardData = [
+    {id: 1, title: "Highest Achieving Student", date: "2015 - 2016", provider: "Warwickshire College", description: "Was the highest achieving student on my Level 2 IT course."},
+    {id: 2, title: "Student of the Year", date: "2017-2018", provider: "Warwickshire College", description: "Awarded for the quality of my work on my Level 3 IT course, whilst also supporting my peers."},
+    {id: 3, title: "Outstanding Achievement", date: "2016-2018", provider: "Warwickshire College", description: "Awarded for achieving D*D*D on my Level 3 IT course."}
+]
 
-const moduleList = [
-    "Web API Development",
-    "Mobile Application Development",
-    "Computer Security",
-    "Dissertation",
-    "Theory of Computation",
-    "Machine Learning & AI"
+const HeroDescriptions = [
+    "Let's collaborate and build accessible web applications",
+    "I'm a web developer with a passion for design and user experience",
+    "Commited to making technology more inclusive and accessible for everyone."
+]
+
+const SkillData = [
+    {id: 1, name: "Git", description: "Version Control", icon: FaGitAlt},
+    {id: 2, name: "JavaScript", description: "Vanilla, React", icon: IoLogoJavascript},
+    {id: 3, name: "Python", description: "Scikit-Learn, NumPy, Pandas", icon: FaPython},
+    {id: 4, name: "C#", description: ".NET MAUI", icon: PiFileCSharpDuotone},
+    {id: 5, name: "HTML5", description: "Front-End Development", icon: FaHtml5},
+    {id: 6, name: "CSS3", description: "SCSS, Bootstrap, Tailwind", icon: FaCss3Alt},
+    {id: 7, name: "Figma", description: "UI Design", icon: FaFigma},
+    {id: 8, name: "Databases", description: "SQL / NoSQL", icon: FaDatabase},
 ]
 
 const Home = () => {
-
-
     return (
-        <div className='site-layout'>
-            <Hero />
-            <Row type='flex' justify='center' id="about" style={{backgroundColor: '#31333B', padding: 20}}>
-                <div className="about">
-                    <AnimationFadeIn delay={2}>
-                    <div className="about-container">
-                        <div className="about-image">
-                                <img src={GraduationImage} alt="Cobi at his graduation holding his degree certificate."/>
-                        </div>
-                        <div className="about-text">
-                                <p>
-                                Hello! I'm a full-stack developer holding a First-class honours degree in Computer Science. With a specialization in Web Development, I am passionate about creating accessible and impactful web applications. Currently, I am actively seeking professional development opportunities where I can hone my skills and broaden my knowledge base. I have a particular interest in leveraging technology to assist individuals with disabilities, aiming to make the digital world more inclusive for everyone. Some noteable areas of study include: 
-                                </p>
-                            <ul>
-                                {moduleList.map((module, index) => {
-                                    return (
-                                        <AnimationFadeIn delay={index * 0.5} key={index}>
-                                            <li key={index}>{module}</li>
-                                        </AnimationFadeIn>
-                                    )
-                                })}
-                            </ul>
-                        </div>
-                    </div>
-                    </AnimationFadeIn>
-                </div>
-            </Row>
-            <Row type='flex' justify='center' id="skills" style={{ backgroundColor: '#31333B', color: 'white', minHeight: '100vh'}}>
-                <SkillsGrid />
-            </Row>
-            <Row type='flex' justify='center' className="quote-bar">
-                    <video className="video-background" autoPlay muted={true} loop playsInline>
-                        <source src={hockeyVideo} type="video/mp4" />
-                    </video>
-                <QuoteBar />
-            </Row>
-            <Row type='flex' justify='center' style={{ backgroundColor: '#2E4053', color: '#fff'}}>
-                <h1 style={{fontSize: 40}}>PROJECTS</h1>
-            </Row>
-            <Row type='flex' justify='center' style={{backgroundColor: "#2E4053", height: '500px', padding: '50'}}>
-                <ProjectCard />
-            </Row>
-        </div>
-    )
+        <section id="home">
+                <Hero 
+                    title="Hey, I'm Cobi"
+                    description={HeroDescriptions}    
+                />
+                <section className="skills">
+                    <h2 style={{margin: 0, fontSize: 48, fontWeight: 100, color: "white", padding: 40}}>Skills</h2>
+                    <main className="skill-container">
+                        {SkillData.map((skill) => (
+                            <SkillCard 
+                                key={skill.id}
+                                title={skill.name}
+                                description={skill.description}
+                                icon={skill.icon}
+                            />
+                        ))}
+                    </main>
+                </section>
+                <section className="text-image-container">
+                    <TextImageComponent
+                        title="Highest Achieving Student"
+                        subtitle="2015-2016"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate mauris quis diam vulputate ultricies. Vestibulum ultrices arcu vitae libero sollicitudin eleifend sit amet auctor dolor. Aliquam ante dolor, varius nec molestie ac, dictum sollicitudin leo. Duis ut lorem et est gravida malesuada. Mauris a erat elit. Maecenas ornare nulla diam, nec pulvinar sapien molestie vitae. Pellentesque interdum, mi ut interdum suscipit, elit risus sodales nisi, ac luctus nunc ex eget massa. Aenean orci sapien, luctus quis porttitor et, porta et mauris. Integer consectetur sapien eget dui accumsan fringilla. Sed hendrerit ultrices elit id suscipit."
+                        imageSrc="https://images.pexels.com/photos/2098578/pexels-photo-2098578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        imageAlt="Illustration"
+                        imageOnRight={true}
+                    />
+
+                    <TextImageComponent
+                        title="Student of the Year"
+                        subtitle="2016-2018"
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate mauris quis diam vulputate ultricies. Vestibulum ultrices arcu vitae libero sollicitudin eleifend sit amet auctor dolor. Aliquam ante dolor, varius nec molestie ac, dictum sollicitudin leo. Duis ut lorem et est gravida malesuada. Mauris a erat elit. Maecenas ornare nulla diam, nec pulvinar sapien molestie vitae. Pellentesque interdum, mi ut interdum suscipit, elit risus sodales nisi, ac luctus nunc ex eget massa. Aenean orci sapien, luctus quis porttitor et, porta et mauris. Integer consectetur sapien eget dui accumsan fringilla. Sed hendrerit ultrices elit id suscipit."
+                        imageSrc="https://images.pexels.com/photos/326259/pexels-photo-326259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        imageAlt="Pink suit"
+                        imageOnRight={false}
+                    />
+                </section>
+        </section>
+    );
 }
 
-export default Home
+export default Home;
