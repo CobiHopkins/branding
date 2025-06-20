@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
+import { MemoryRouter, Router, Routes, Route } from 'react-router-dom';
 import NavBar from '../components/NavBar/NavBar';
+import { act } from 'react-dom/test-utils';
 
 /**
  * Test checklist for NavBar
@@ -10,8 +12,11 @@ import NavBar from '../components/NavBar/NavBar';
  * [x] Contains a "Home" navigation link
  * [x] Contains a "Projects" navigation link
  * [x] Includes a <nav> element with aria-label="Main navigation"
- * [ ] Navigation links route correctly when clicked
+ * [x] Navigation links route correctly when clicked
  */
+
+const Home = () => <div>Home Page</div>;
+const Projects = () => <div>Projects page</div>;
 
 describe(NavBar, () => {
     it('Renders the NavBar component without crashing', () => {
@@ -34,5 +39,25 @@ describe(NavBar, () => {
         render(<NavBar />, { wrapper: MemoryRouter });
         const navBar = screen.getByRole('navigation');
         expect(navBar).toHaveAttribute('aria-label', 'Main navigation');
+    });
+
+    it('Navigation links route correctly when clicked', async () => {
+        const user = await userEvent.setup();
+        render(
+            <MemoryRouter initialEntries={['/']}>
+                <NavBar />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/projects" element={<Projects />} />
+                </Routes>
+            </MemoryRouter>
+        );
+
+        expect(await screen.findByText(/Home Page/i)).toBeInTheDocument();
+
+        const projectsLink = screen.getByRole('link', { name: /projects/i });
+        await user.click(projectsLink);
+
+        expect(await screen.getByText(/Projects Page/i)).toBeInTheDocument();
     });
 });

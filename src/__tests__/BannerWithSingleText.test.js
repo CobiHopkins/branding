@@ -72,7 +72,7 @@ describe(BannerWithSingleText, () => {
         const banner = screen.getByRole("region");
 
         expect(banner).toHaveAttribute('aria-label', 'Banner');
-    })
+    });
 
     it('Applies the background-image styling', () => {
         render(<BannerWithSingleText title="Styled Banner" />);
@@ -106,5 +106,5 @@ describe(BannerWithSingleText, () => {
     it('Matches snapshot with an empty title', () => {
         const { container } = render(<BannerWithSingleText />);
         expect(container).toMatchSnapshot();
-    })
+    });
 });

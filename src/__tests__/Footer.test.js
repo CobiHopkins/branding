@@ -9,8 +9,8 @@ import Footer from '../components/Footer/Footer';
  * [x] Contains a link to Github, Twitch, and X with the associated icons
  * [x] All links open in a new tab (target="_blank")
  * [x] All links include rel="noopener noreferrer"
- * [ ] Includes two horizontal divider lines between icons
- * [ ] Uses correct MUI layout with Stack and spacing
+ * [x] Includes two horizontal divider lines between icons
+ * [x] Uses correct MUI layout with Stack
  * [ ] All links use the MUI color "secondary" and no underline
  */
 
@@ -55,6 +55,44 @@ describe(Footer, () => {
         const links = within(footer).getAllByRole('link');
         links.forEach(link => {
             expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+        });
+    });
+
+    it('Includes two horizontal divider lines between icons', () => {
+        render(<Footer />);
+        const footer = screen.getByRole('contentinfo');
+        const divs = footer.querySelectorAll('div');
+
+        expect(divs.length).toBe(2);
+
+        divs.forEach(div => {
+            expect(div).toHaveStyle({
+                width: '75px',
+                height: '1px'
+            });
+        })
+    });
+
+    it('Uses correct MUI layout with Stack', () => {
+        render(<Footer />);
+        const footer = screen.getByRole('contentinfo');
+
+        expect(footer).toHaveStyle({
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '80px',
+        });
+    });
+
+    it('All links use the MUI color "secondary" and no underline', () => {
+        render(<Footer />);
+        const footer = screen.getByRole('contentinfo');
+        const links = within(footer).getAllByRole('link');
+
+        links.forEach((link) => {
+            expect(link).toHaveClass('MuiLink-underlineNone', 'MuiTypography-xlarge')
         });
     });
 
