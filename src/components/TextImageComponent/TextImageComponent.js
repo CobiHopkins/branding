@@ -1,5 +1,6 @@
 import "./TextImageComponent.css";
-import { Box, Typography } from "@mui/material";
+import BaseButton from "../BaseButton/BaseButton";
+import { Stack, Box, Typography } from "@mui/material";
 
 /**
  * 
@@ -8,25 +9,31 @@ import { Box, Typography } from "@mui/material";
  * @param {string} text - The main text content to be displayed.
  * @param {string} imageSrc - 
  * @param {string} imageAlt - Alt text describing the contents of the image for accessibility purposes.
- * @param {boolean} imageOnRight - Whether to display the image on the left side (true) or right side (false).
+ * @param {boolean} imageOnRight - Whether to display the image on the left side (true) or right side (false).#
+ * @param {string} imageSize - Whether the image is small, medium, or large in size.
  * 
  * @returns A text image component horizontally split. An image on one side and text content on the other.
  */
 
-const TextImageComponent = ({ title, subtitle, text, imageSrc, imageAlt, imageOnRight = true }) => {
+const TextImageComponent = ({ title, subtitle, text, imageSrc = "/assets/laptop_coding_pexels.png", imageAlt, imageOnRight = true, imageSize = "large", color="primary", buttonText = undefined, buttonHref = undefined }) => {
 
 
     return (
-        <div className="split-section" style={{flexDirection: imageOnRight === true ? "row" : "row-reverse" }}>
-            <div className="split-section-text">
-				<h2 className="split-section-title">{title}</h2>
-				<h4 className="split-section-subtitle">{subtitle}</h4>
-                <p>{text}</p>
-            </div>
-            <div className="split-section-image">
+        <Stack className="split-section" direction={{flexDirection: imageOnRight === true ? "row" : "row-reverse" }}>
+            <Box component="section" className="split-section-text">
+                <Typography variant="h5" color="primary.light">{title}</Typography>
+                <Typography variant="h6" sx={{ mb: 1, color: "secondary.dark"}}>{subtitle}</Typography>
+                <Typography variant="body" color="primary.light">{text}</Typography>
+                {buttonHref &&
+                    <Box component="section" sx={{ margin: "10px 0px"}}>
+                        <BaseButton component="a" href={buttonHref} text={buttonText} variant="outlined" color="secondary.dark" />
+                    </Box>
+                    }
+            </Box>
+            <Box component="section" className={`split-section-image-${imageSize}`}>
                 <img src={imageSrc} alt={imageAlt} />
-            </div>
-        </div>
+            </Box>
+        </Stack>
     )
 }
 
