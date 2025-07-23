@@ -1,5 +1,7 @@
 .loading-ball {
-    background: gold;
+    background-color: var(--background-color);
+    width: var(--ball-width);
+    height: var(--ball-height);
     border-radius: 50%;
     animation: bounce 1s infinite alternate;
     position: relative;
