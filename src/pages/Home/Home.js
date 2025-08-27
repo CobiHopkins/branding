@@ -53,6 +53,7 @@ const Home = () => {
                     title="Hey, I'm Cobi"
                     description={HeroDescriptions}
                     allowDescriptionAnimation={true}
+                    buttonHref="https://linkedin.com/in/CobiHopkins"
                 />
                 <Box component="section" className="skills">
 
