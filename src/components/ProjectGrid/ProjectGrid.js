@@ -1,6 +1,6 @@
 import { Stack } from "@mui/material";
 
-import AnimationFadeIn from "../AnimationFadeIn/AnimationFadeIn";
+import AnimationFadeIn from "../animationFadeIn/AnimationFadeIn";
 import TextImageComponent from "../TextImageComponent/TextImageComponent";
 
 const ProjectGrid = ({projects}) => {

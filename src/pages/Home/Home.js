@@ -15,7 +15,7 @@ import SkillCard from "../../components/SkillCard/SkillCard";
 import TextImageComponent from "../../components/TextImageComponent/TextImageComponent";
 import ThreeTierCard from '../../components/ThreeTierCard/ThreeTierCard';
 import BaseButton from "../../components/BaseButton/BaseButton";
-import AnimationFadeIn from "../../components/AnimationFadeIn/AnimationFadeIn";
+import AnimationFadeIn from "../../components/animationFadeIn/AnimationFadeIn";
 import AnimatedLoadingBalls from "../../components/AnimatedLoadingBalls/AnimatedLoadingBalls";
 
 import { ProjectContext } from '../../contexts/projects';

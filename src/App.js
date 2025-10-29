@@ -16,6 +16,8 @@ import Error from "./pages/Error/Error";
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import { ProjectProvider } from './contexts/projects';
+// import { accessibilityProvider } from "./contexts/accessibility";
+import AccessibilityToolbar from "./components/AccessibilityToolbar/AccessibilityToolbar";
 
 // Main theme for the application.
 const theme = createTheme({
@@ -40,6 +42,8 @@ const theme = createTheme({
 })
 
 function App() {
+
+
   return (
     <ThemeProvider theme={theme}>
       <ProjectProvider>
@@ -53,6 +57,13 @@ function App() {
           </Routes>
           <Footer />
         </Router>
+        <AccessibilityToolbar toggleToolbar={false}>
+          {/* Additional accessibility features can be added here.
+            toggleToolbar will be changed to a function to handle the toolbar state.
+            
+          */}
+
+        </AccessibilityToolbar>
       </ProjectProvider>
     </ThemeProvider>
   )
