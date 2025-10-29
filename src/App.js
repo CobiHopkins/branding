@@ -9,6 +9,7 @@ import './App.css';
 // Importing Pages
 import Home from "./pages/Home/Home";
 import Projects from "./pages/Projects/Projects";
+import Blog from "./pages/Blog/Blog";
 import ProjectDetails from "./components/ProjectDetails/ProjectDetails";
 import Error from "./pages/Error/Error";
 
@@ -49,6 +50,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/projects/:id" element={<ProjectDetails />} />
+              <Route path="/blog" element={<Blog />} />
             <Route path="*" element={<Error />} />
           </Routes>
           <Footer />
