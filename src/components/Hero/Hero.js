@@ -37,7 +37,7 @@ function Hero({avatar, avatarAltText, title = null, description, allowDescriptio
                     color: "primary.light"
                 }}>
                     {allowDescriptionAnimation ? AnimatedText : StaticText}
-                    <BaseButton component="a" href={buttonHref} variant="outlined" submittable={false} disabled={false} color="secondary" text="Contact Me" />
+                    <BaseButton component="a" href={buttonHref} variant="outlined" submittable={false} disabled={false} color="secondary" text="Contact via LinkedIn" target="_blank"/>
                 </Stack>
         </Stack>
     );
