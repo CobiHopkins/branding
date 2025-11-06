@@ -1,13 +1,12 @@
-import { Stack } from "@mui/material";
-
-import AnimationFadeIn from "../AnimationFadeIn/AnimationFadeIn";
-import TextImageComponent from "../TextImageComponent/TextImageComponent";
+import AnimationFadeIn from "../../Animations/AnimationFadeIn/AnimationFadeIn";
+import TextImageComponent from "../../Layouts/TextImageComponent/TextImageComponent";
+import ListGridLayout from "../../Layouts/ListGridLayout/ListGridLayout";
 
 const ProjectGrid = ({projects}) => {
 
 
     return (
-        <Stack direction="column" alignContent="center" justifyContent="center">
+        <ListGridLayout layoutType="column" itemSpacing={0}>
             {projects.map((project, index) => (
                 <AnimationFadeIn delay={index * 0.25}>
                     <TextImageComponent 
@@ -20,7 +19,7 @@ const ProjectGrid = ({projects}) => {
                     />
                 </AnimationFadeIn>
             ))}
-        </Stack>
+        </ListGridLayout>
     );
 }
 

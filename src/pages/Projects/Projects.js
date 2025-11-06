@@ -1,9 +1,10 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { ProjectContext } from '../../contexts/projects';
 import { Stack, Box, Typography } from '@mui/material';
-import ProjectGrid from "../../components/ProjectGrid/ProjectGrid";
-import BannerWithSingleText from '../../components/BannerWithSingleText/BannerWithSingleText';
-import AnimatedLoadingBalls from '../../components/AnimatedLoadingBalls/AnimatedLoadingBalls';
+import ProjectGrid from "../../components/DataDisplay/ProjectGrid/ProjectGrid";
+import BannerWithSingleText from '../../components/Layouts/BannerWithSingleText/BannerWithSingleText';
+import AnimatedLoadingBalls from '../../components/Animations/AnimatedLoadingBalls/AnimatedLoadingBalls';
+import ListGridLayout from '../../components/Layouts/ListGridLayout/ListGridLayout';
 
 const Projects = () => {
 

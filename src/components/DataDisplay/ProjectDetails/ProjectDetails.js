@@ -6,11 +6,11 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 
 // My component imports
-import { ProjectContext } from "../../contexts/projects";
-import BannerWithSingleText from '../BannerWithSingleText/BannerWithSingleText';
-import TagPill from '../TagPill/TagPill';
+import { ProjectContext } from "../../../contexts/projects";
+import BannerWithSingleText from '../../Layouts/BannerWithSingleText/BannerWithSingleText';
+import TagPill from '../../Base/TagPill/TagPill';
 
-import { ConvertToJsx } from '../../helperFunctions/ConvertToJsx/index';
+import { ConvertToJsx } from '../../../helperFunctions/ConvertToJsx/index';
 
 
 const ProjectDetails = () => {

@@ -25,7 +25,7 @@ const AnimatedTextFading = ({animationDelay = 5000, items, variant="h1", classNa
         }, animationDelay);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [items]);
 
     return (
         <Typography aria-live="polite" aria-atomic="true" variant={variant} className={`${className} ${isVisible ? 'visible' : 'hidden'}`}>

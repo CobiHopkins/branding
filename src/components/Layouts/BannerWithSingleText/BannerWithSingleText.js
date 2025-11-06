@@ -1,5 +1,5 @@
-import { Box, Typography } from "@mui/material";
-import PrismBackground from '../../assets/subtle-prism.svg';
+import { Box, Typography } from '@mui/material';
+import PrismBackground from '../../../assets/subtle-prism.svg';
 
 const BannerWithSingleText = ({title = ''}) => {
 

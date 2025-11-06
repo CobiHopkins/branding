@@ -1,6 +1,6 @@
 import "./Hero.css";
-import AnimatedTextFading from "../AnimatedTextFading/AnimatedTextFading";
-import BaseButton from "../BaseButton/BaseButton";
+import AnimatedTextFading from "../../Animations/AnimatedTextFading/AnimatedTextFading";
+import BaseButton from "../../Base/BaseButton/BaseButton";
 import { Stack, Typography } from "@mui/material";
 
 /**

@@ -10,12 +10,12 @@ import './App.css';
 import Home from "./pages/Home/Home";
 import Projects from "./pages/Projects/Projects";
 import Blog from "./pages/Blog/Blog";
-import ProjectDetails from "./components/ProjectDetails/ProjectDetails";
 import Error from "./pages/Error/Error";
 
 // Import my Components
-import NavBar from './components/NavBar/NavBar';
-import Footer from './components/Footer/Footer';
+import ProjectDetails from './components/DataDisplay/ProjectDetails/ProjectDetails';
+import NavBar from './components/Navigation/NavBar/NavBar';
+import Footer from './components/Layouts/Footer/Footer';
 import { ProjectProvider } from './contexts/projects';
 
 // Main theme for the application.

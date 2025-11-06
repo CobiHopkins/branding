@@ -1,6 +1,6 @@
-import "./TextImageComponent.css";
-import BaseButton from "../BaseButton/BaseButton";
-import { Stack, Box, Typography } from "@mui/material";
+import './TextImageComponent.css';
+import BaseButton from '../../Base/BaseButton/BaseButton';
+import { Stack, Box, Typography } from '@mui/material';
 
 /**
  * 

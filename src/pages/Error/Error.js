@@ -1,4 +1,4 @@
-import BaseButton from "../../components/BaseButton/BaseButton";
+import BaseButton from "../../components/Base/BaseButton/BaseButton";
 import { Stack, Typography } from "@mui/material";
 
 const Error = () => {

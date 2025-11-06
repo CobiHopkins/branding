@@ -10,13 +10,13 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { PiFileCSharpDuotone } from "react-icons/pi";
 
 // Import internal components, contexts, assets, and functions.
-import Hero from "../../components/Hero/Hero";
-import SkillCard from "../../components/SkillCard/SkillCard";
-import TextImageComponent from "../../components/TextImageComponent/TextImageComponent";
-import ThreeTierCard from '../../components/ThreeTierCard/ThreeTierCard';
-import BaseButton from "../../components/BaseButton/BaseButton";
-import AnimationFadeIn from "../../components/AnimationFadeIn/AnimationFadeIn";
-import AnimatedLoadingBalls from "../../components/AnimatedLoadingBalls/AnimatedLoadingBalls";
+import Hero from '../../components/Layouts/Hero/Hero';
+import SkillCard from "../../components/DataDisplay/SkillCard/SkillCard";
+import TextImageComponent from "../../components/Layouts/TextImageComponent/TextImageComponent";
+import ThreeTierCard from '../../components/DataDisplay/ThreeTierCard/ThreeTierCard';
+import BaseButton from "../../components/Base/BaseButton/BaseButton";
+import AnimationFadeIn from "../../components/Animations/AnimationFadeIn/AnimationFadeIn";
+import AnimatedLoadingBalls from "../../components/Animations/AnimatedLoadingBalls/AnimatedLoadingBalls";
 
 import { ProjectContext } from '../../contexts/projects';
 
