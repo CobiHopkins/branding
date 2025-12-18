@@ -1,5 +1,5 @@
 import './TextImageComponent.css';
-import BaseButton from '../../Base/BaseButton/BaseButton';
+import CustomButton from '../../Base/CustomButton/CustomButton';
 import { Stack, Box, Typography } from '@mui/material';
 
 /**
@@ -15,7 +15,7 @@ import { Stack, Box, Typography } from '@mui/material';
  * @returns A text image component horizontally split. An image on one side and text content on the other.
  */
 
-const TextImageComponent = ({ title, subtitle, text, imageSrc = "/assets/laptop_coding_pexels.png", imageAlt, imageOnRight = true, imageSize = "large", color="primary", buttonText = undefined, buttonHref = undefined }) => {
+const TextImageComponent = ({ title, subtitle, text, imageSrc = "/assets/laptop_coding_pexels.png", imageAlt, imageOnRight = true, imageSize = "large", color="primary", CustomButtonText = undefined, CustomButtonHref = undefined }) => {
 
 
     return (
@@ -24,9 +24,9 @@ const TextImageComponent = ({ title, subtitle, text, imageSrc = "/assets/laptop_
                 <Typography variant="h5" color="primary.light">{title}</Typography>
                 <Typography variant="h6" sx={{ mb: 1, color: "secondary.dark"}}>{subtitle}</Typography>
                 <Typography variant="body" color="primary.light">{text}</Typography>
-                {buttonHref &&
+                {CustomButtonHref &&
                     <Box component="section" sx={{ margin: "10px 0px"}}>
-                        <BaseButton component="a" href={buttonHref} text={buttonText} variant="outlined" color="secondary.dark" />
+                        <CustomButton component="a" href={CustomButtonHref} text={CustomButtonText} variant="outlined" color="secondary.dark" />
                     </Box>
                     }
             </Box>

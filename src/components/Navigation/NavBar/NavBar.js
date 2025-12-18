@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <AppBar component="nav" aria-label="Main navigation" position="sticky" sx={{ backgroundColor: 'secondary.dark'}}>
+    <AppBar component="nav" aria-label="Main navigation" position="sticky" sx={{ backgroundColor: "primary.light"}}>
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           Cobi Hopkins

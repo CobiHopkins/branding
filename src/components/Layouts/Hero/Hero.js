@@ -1,6 +1,6 @@
 import "./Hero.css";
 import AnimatedTextFading from "../../Animations/AnimatedTextFading/AnimatedTextFading";
-import BaseButton from "../../Base/BaseButton/BaseButton";
+import CustomButton from "../../Base/CustomButton/CustomButton";
 import { Stack, Typography } from "@mui/material";
 
 /**
@@ -13,7 +13,7 @@ import { Stack, Typography } from "@mui/material";
  * 
  */
 
-function Hero({avatar, avatarAltText, title = null, description, allowDescriptionAnimation = true, buttonHref}) {
+function Hero({avatar, avatarAltText, title = null, description, allowDescriptionAnimation = true, CustomButtonHref}) {
     
     const AnimatedText = (
         <AnimatedTextFading 
@@ -24,20 +24,20 @@ function Hero({avatar, avatarAltText, title = null, description, allowDescriptio
     );
 
     const StaticText = (
-        <Typography variant="xlarge" sx={{color: "primary.light"}}>{description[0]}</Typography>
+        <Typography variant="xlarge" sx={{color: "primary.contrastText"}}>{description[0]}</Typography>
     )
     
     return (
         <Stack component="section" className="hero" spacing={6}>
-                {title && <Typography variant="h3" sx={{color: "primary.light"}}>{title}</Typography>}
+                {title && <Typography variant="h3" sx={{color: "primary.contrastText"}}>{title}</Typography>}
                 <Stack component="section" spacing={2} alignItems="center" justifyContent="center" sx={{
                     fontSize: 32,
                     maxWidth: 500,
                     textAlign: "center",
-                    color: "primary.light"
+                    color: "primary.contrastText"
                 }}>
                     {allowDescriptionAnimation ? AnimatedText : StaticText}
-                    <BaseButton component="a" href={buttonHref} variant="outlined" submittable={false} disabled={false} color="secondary" text="Contact Me" />
+                    <CustomButton component="a" href={CustomButtonHref} variant="outlined" submittable={false} disabled={false} color="secondary" text="Contact Me" />
                 </Stack>
         </Stack>
     );

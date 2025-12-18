@@ -1,4 +1,4 @@
-import BaseButton from "../../components/Base/BaseButton/BaseButton";
+import CustomButton from "../../components/Base/CustomButton/CustomButton";
 import { Stack, Typography } from "@mui/material";
 
 const Error = () => {
@@ -25,7 +25,7 @@ const Error = () => {
                 alignItems="center"
                 justifyContent="center"
             >
-                <BaseButton component="a" href="/" text="Go Home" variant="outlined" color="secondary.dark" />
+                <CustomButton component="a" href="/" text="Go Home" variant="outlined" color="secondary.dark" />
             </Stack>
         </Stack>
     )

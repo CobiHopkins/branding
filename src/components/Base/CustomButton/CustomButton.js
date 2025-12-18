@@ -15,7 +15,7 @@ import { Button } from "@mui/material";
  * 
  */
 
-const BaseButton = ({href = undefined, component = "button", text, className, submittable=false, disabled=false, onClick, variant = "outlined", color="primary"}) => {
+const CustomButton = ({href = undefined, component = "button", text, className, submittable=false, disabled=false, onClick, variant = "outlined", color="primary"}) => {
 
     if (!text) return null; 
     
@@ -26,4 +26,4 @@ const BaseButton = ({href = undefined, component = "button", text, className, su
     )
 }
 
-export default BaseButton;
+export default CustomButton;

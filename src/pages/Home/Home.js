@@ -14,7 +14,7 @@ import Hero from '../../components/Layouts/Hero/Hero';
 import SkillCard from "../../components/DataDisplay/SkillCard/SkillCard";
 import TextImageComponent from "../../components/Layouts/TextImageComponent/TextImageComponent";
 import ThreeTierCard from '../../components/DataDisplay/ThreeTierCard/ThreeTierCard';
-import BaseButton from "../../components/Base/BaseButton/BaseButton";
+import CustomButton from "../../components/Base/CustomButton/CustomButton";
 import AnimationFadeIn from "../../components/Animations/AnimationFadeIn/AnimationFadeIn";
 import AnimatedLoadingBalls from "../../components/Animations/AnimatedLoadingBalls/AnimatedLoadingBalls";
 
@@ -112,7 +112,7 @@ const Home = () => {
                             ))
                         }
                     </Stack>
-                    <BaseButton component="a" href="projects" variant="outlined" color="secondary" text="View More" />
+                    <CustomButton component="a" href="projects" variant="outlined" color="secondary" text="View More" />
                 </Box>
         </>
     );

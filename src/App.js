@@ -1,7 +1,7 @@
 
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material";
-import { grey, yellow } from '@mui/material/colors';
+import defaultTheme from "./styles/definitions/default.json";
 
 import './App.css';
 
@@ -19,26 +19,7 @@ import Footer from './components/Layouts/Footer/Footer';
 import { ProjectProvider } from './contexts/projects';
 
 // Main theme for the application.
-const theme = createTheme({
-  palette: {
-    primary: grey,
-    secondary: yellow
-  },
-  typography: {
-    large: {
-      fontSize: 32,
-      fontWeight: 300,
-    },
-    xlarge: {
-      fontSize: 48,
-      fontWeight: 300,
-    },
-    xxlarge: {
-      fontSize: 72,
-      fontWeight: 300,
-    }
-  }
-})
+const theme = createTheme(defaultTheme);
 
 function App() {
   return (
