@@ -1,7 +1,6 @@
-
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
-import { createTheme, ThemeProvider } from "@mui/material";
-import defaultTheme from "./styles/definitions/default.json";
+import { ThemeProvider } from "@mui/material";
+import { darkTheme } from "./styles/themes";
 
 import './App.css';
 
@@ -18,12 +17,10 @@ import NavBar from './components/Navigation/NavBar/NavBar';
 import Footer from './components/Layouts/Footer/Footer';
 import { ProjectProvider } from './contexts/projects';
 
-// Main theme for the application.
-const theme = createTheme(defaultTheme);
-
 function App() {
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={darkTheme}>
       <ProjectProvider>
         <Router>
           <NavBar />

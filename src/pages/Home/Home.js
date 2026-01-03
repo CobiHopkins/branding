@@ -9,8 +9,7 @@ import { FaGitAlt, FaDatabase, FaPython, FaHtml5, FaCss3Alt, FaFigma } from "rea
 import { IoLogoJavascript } from "react-icons/io5";
 import { PiFileCSharpDuotone } from "react-icons/pi";
 
-// Import internal components, contexts, assets, and functions.
-import Hero from '../../components/Layouts/Hero/Hero';
+// Import internal components, contexts, assets, and functions. 
 import SkillCard from "../../components/DataDisplay/SkillCard/SkillCard";
 import TextImageComponent from "../../components/Layouts/TextImageComponent/TextImageComponent";
 import ThreeTierCard from '../../components/DataDisplay/ThreeTierCard/ThreeTierCard';
@@ -26,11 +25,11 @@ const AwardData = [
     {id: 3, title: "Outstanding Achievement", date: "2016-2018", description: "I was proud to receive the \"Outstanding Achievement\" award for my exceptional performance in the BTEC Level 3 course, where I achieved D*D*D, the equivalent of A*A*A at A-Levels. In addition to the 18 modules required for the course, I took the initiative to study an extra module purely out of personal interest, demonstrating my passion for IT and my eagerness to learn beyond the curriculum. Throughout the course, I consistently ranked at the top of the class, tackling complex problems and, on occasion, pushing beyond the boundaries of support that my lecturers could offer. This award reflects not only my academic excellence but also my dedication to pushing the boundaries of my knowledge and skills.", imageSrc: "/assets/pexels-n-voitkevich-6532374.jpg", imageAlt: "A yellow background with sparkly circles and two tilted trophies laying down. (Image from Pexels)"}
 ]
 
-const HeroDescriptions = [
-    "Let's collaborate and build accessible web applications",
-    "I'm a web developer with a passion for design and user experience",
-    "Commited to making technology more inclusive and accessible"
-]
+// const HeroDescriptions = [
+//     "Let's collaborate and build accessible web applications",
+//     "I'm a web developer with a passion for design and user experience",
+//     "Commited to making technology more inclusive and accessible"
+// ]
 
 const SkillData = [
     {id: 1, name: "Git", description: "Version Control", icon: FaGitAlt, iconAltText: "Version control tool: Git"},
@@ -48,12 +47,20 @@ const Home = () => {
     const { projects, loading } = useContext(ProjectContext);
 
     return (
-        <>
-                <Hero 
-                    title="Hey, I'm Cobi"
-                    description={HeroDescriptions}
-                    allowDescriptionAnimation={true}
-                />
+            <>
+            <Box  component="section" className="hero" alignContent="center" sx={{ width: "100%", height: "calc(100vh - 64px)", backgroundColor: "primary.main"}}>
+                {/* Surround contents with a background animation following the cursor. */}
+                <Stack direction="row" justifyContent="space-evenly" alignItems="center" sx={{ width: "100%", height: "100%"}}>
+                    <Stack gap={2}>
+                        <Typography variant="super" color="primary.contrastText" sx={{ width: 550 }}>Freelance Software Engineer</Typography>
+                        <Typography variant="default" color="secondary.alternative" sx={{ width: 500 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a efficitur dolor, ut luctus quam. Ut nulla risus, pulvinar id enim ac, ornare luctus lectus. Donec non aliquet quam, eu tempor elit. Pellentesque ultrices purus ac commodo tempor. Ut facilisis mi sed leo mattis, et posuere ante cursus.</Typography>
+                        <CustomButton href="https://linkedin.com/in/cobihopkins" component="button" text="Contact Me" color="primary.alternative" />
+                    </Stack>
+                    <Box>
+                        <img alt="" src="https://static.vecteezy.com/system/resources/thumbnails/024/658/893/small/conversational-3d-male-character-engaged-in-a-discussion-free-png.png" />
+                    </Box>
+                </Stack>
+            </Box>
                 <Box component="section" className="skills">
 
                     <Typography variant="h2" sx={{ mb: 2, color: "primary.light", textAlign: 'center' }}>Skills</Typography>
